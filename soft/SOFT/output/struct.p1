@@ -1,0 +1,250 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"6 F:\data\о�lSCMCU\JBQ-B04L1\soft\SOFT\Source\struct.h
+[s S14 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `us 1 `uc 1 `us 1 ]
+[n S14 . index chAisle chIndex adcBuffer adcBufferTemp quantity batTotal batV1 batV2 batILoad batChar batCharBank adcpwmDuty pwmDuty aVolTemp volCnt aVolBank ]
+"28
+[s S15 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S15 . sw1Temp sw1Index sw2Temp sw2Index testmpp ]
+"38
+[s S16 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 ]
+[n S16 . sw1Cnt sw2Cnt stanbyCnt work workStopCnt ledStopTime ledStopCnt low6_4v3sCnt ]
+"51
+[s S17 `uc 1 `uc 1 `uc 1 ]
+[n S17 . flicker1hzCnt flicker2hzCnt tempBank ]
+"59
+[s S18 `uc 1 `uc 1 ]
+[n S18 . inWorkIndex motorLock ]
+"66
+[s S19 `uc 1 `uc 1 ]
+[n S19 . pwmValue pwmCycle ]
+[; ;base.h: 19: typedef unsigned char uchar;
+[; ;base.h: 20: typedef unsigned short ushort;
+[; ;base.h: 21: typedef unsigned int uint;
+[; ;base.h: 22: typedef unsigned long ulong;
+[; ;base.h: 24: typedef signed long s32;
+[; ;base.h: 25: typedef signed short s16;
+[; ;base.h: 26: typedef signed char s8;
+[; ;base.h: 32: typedef signed long const sc32;
+[; ;base.h: 33: typedef signed short const sc16;
+[; ;base.h: 34: typedef signed char const sc8;
+[; ;base.h: 36: typedef volatile signed long vs32;
+[; ;base.h: 37: typedef volatile signed short vs16;
+[; ;base.h: 38: typedef volatile signed char vs8;
+[; ;base.h: 45: typedef volatile signed long const vsc32;
+[; ;base.h: 46: typedef volatile signed short const vsc16;
+[; ;base.h: 47: typedef volatile signed char const vsc8;
+[; ;base.h: 49: typedef unsigned long u32;
+[; ;base.h: 50: typedef unsigned short u16;
+[; ;base.h: 51: typedef unsigned char u8;
+[; ;base.h: 57: typedef unsigned long const uc32;
+[; ;base.h: 58: typedef unsigned short const uc16;
+[; ;base.h: 59: typedef unsigned char const uc8;
+[; ;base.h: 61: typedef volatile unsigned long vu32;
+[; ;base.h: 62: typedef volatile unsigned short vu16;
+[; ;base.h: 63: typedef volatile unsigned char vu8;
+[; ;base.h: 69: typedef volatile unsigned long const vuc32;
+[; ;base.h: 70: typedef volatile unsigned short const vuc16;
+[; ;base.h: 71: typedef volatile unsigned char const vuc8;
+[; ;base.h: 74: typedef u8 uint8;
+[; ;base.h: 75: typedef u16 uint16;
+[; ;base.h: 76: typedef u32 uint32;
+[; ;base.h: 77: typedef s8 int8;
+[; ;base.h: 78: typedef s16 int16;
+[; ;base.h: 79: typedef s32 int32;
+[; ;base.h: 100: typedef u8 uint8_t;
+[; ;base.h: 101: typedef u16 uint16_t;
+[; ;base.h: 102: typedef u32 uint32_t;
+[; ;base.h: 103: typedef s8 int8_t;
+[; ;base.h: 104: typedef s16 int16_t;
+[; ;base.h: 105: typedef s32 int32_t;
+[; ;base.h: 123: typedef enum
+[; ;base.h: 124: {
+[; ;base.h: 125: FALSE = 0,
+[; ;base.h: 126: TRUE = !FALSE
+[; ;base.h: 127: } bool;
+[; ;base.h: 129: typedef enum
+[; ;base.h: 130: {
+[; ;base.h: 131: RESET = 0,
+[; ;base.h: 132: SET = !RESET
+[; ;base.h: 133: } FlagStatus;
+[; ;base.h: 135: typedef enum
+[; ;base.h: 136: {
+[; ;base.h: 137: DISABLE = 0,
+[; ;base.h: 138: ENABLE = !DISABLE
+[; ;base.h: 139: } FunctionalState;
+[; ;base.h: 141: typedef enum
+[; ;base.h: 142: {
+[; ;base.h: 143: ERROR = 0,
+[; ;base.h: 144: SUCCESS = !ERROR
+[; ;base.h: 145: } ErrorStatus;
+[; ;base.h: 188: typedef union
+[; ;base.h: 189: {
+[; ;base.h: 190: struct
+[; ;base.h: 191: {
+[; ;base.h: 192: u8 h1:4;
+[; ;base.h: 193: u8 h2:4;
+[; ;base.h: 194: } hex;
+[; ;base.h: 195: u8 num;
+[; ;base.h: 196: } HEX_U8;
+[; ;base.h: 198: typedef union
+[; ;base.h: 199: {
+[; ;base.h: 200: struct
+[; ;base.h: 201: {
+[; ;base.h: 202: u8 h3:4;
+[; ;base.h: 203: u8 h4:4;
+[; ;base.h: 204: u8 h1:4;
+[; ;base.h: 205: u8 h2:4;
+[; ;base.h: 206: } hex;
+[; ;base.h: 207: struct
+[; ;base.h: 208: {
+[; ;base.h: 209: u8 b2;
+[; ;base.h: 210: u8 b1;
+[; ;base.h: 211: } byte;
+[; ;base.h: 212: u8 bytes[2];
+[; ;base.h: 213: u16 num;
+[; ;base.h: 214: } HEX_U16;
+[; ;base.h: 216: typedef union
+[; ;base.h: 217: {
+[; ;base.h: 218: struct
+[; ;base.h: 219: {
+[; ;base.h: 220: u8 h7:4;
+[; ;base.h: 221: u8 h8:4;
+[; ;base.h: 222: u8 h5:4;
+[; ;base.h: 223: u8 h6:4;
+[; ;base.h: 224: u8 h3:4;
+[; ;base.h: 225: u8 h4:4;
+[; ;base.h: 226: u8 h1:4;
+[; ;base.h: 227: u8 h2:4;
+[; ;base.h: 228: } hex;
+[; ;base.h: 229: struct
+[; ;base.h: 230: {
+[; ;base.h: 231: u8 b4;
+[; ;base.h: 232: u8 b3;
+[; ;base.h: 233: u8 b2;
+[; ;base.h: 234: u8 b1;
+[; ;base.h: 235: } byte;
+[; ;base.h: 236: u8 bytes[4];
+[; ;base.h: 237: u32 num;
+[; ;base.h: 238: } HEX_U32;
+[; ;base.h: 241: typedef union
+[; ;base.h: 242: {
+[; ;base.h: 243: struct
+[; ;base.h: 244: {
+[; ;base.h: 245: u8 b0:1;
+[; ;base.h: 246: u8 b1:1;
+[; ;base.h: 247: u8 b2:1;
+[; ;base.h: 248: u8 b3:1;
+[; ;base.h: 249: u8 b4:1;
+[; ;base.h: 250: u8 b5:1;
+[; ;base.h: 251: u8 b6:1;
+[; ;base.h: 252: u8 b7:1;
+[; ;base.h: 253: } bits;
+[; ;base.h: 254: u8 allBits;
+[; ;base.h: 255: } FLAGS8;
+[; ;base.h: 257: typedef union
+[; ;base.h: 258: {
+[; ;base.h: 259: struct
+[; ;base.h: 260: {
+[; ;base.h: 261: u8 H;
+[; ;base.h: 262: u8 L;
+[; ;base.h: 263: } byte;
+[; ;base.h: 264: struct
+[; ;base.h: 265: {
+[; ;base.h: 266: u8 b8:1;
+[; ;base.h: 267: u8 b9:1;
+[; ;base.h: 268: u8 b10:1;
+[; ;base.h: 269: u8 b11:1;
+[; ;base.h: 270: u8 b12:1;
+[; ;base.h: 271: u8 b13:1;
+[; ;base.h: 272: u8 b14:1;
+[; ;base.h: 273: u8 b15:1;
+[; ;base.h: 274: u8 b0:1;
+[; ;base.h: 275: u8 b1:1;
+[; ;base.h: 276: u8 b2:1;
+[; ;base.h: 277: u8 b3:1;
+[; ;base.h: 278: u8 b4:1;
+[; ;base.h: 279: u8 b5:1;
+[; ;base.h: 280: u8 b6:1;
+[; ;base.h: 281: u8 b7:1;
+[; ;base.h: 282: } bits;
+[; ;base.h: 283: u16 allBits;
+[; ;base.h: 284: } FLAGS16;
+[; ;struct.h: 5: typedef struct
+[; ;struct.h: 6: {
+[; ;struct.h: 7: u8 index;
+[; ;struct.h: 8: u8 chAisle;
+[; ;struct.h: 9: u8 chIndex;
+[; ;struct.h: 10: u16 adcBuffer;
+[; ;struct.h: 11: u16 adcBufferTemp;
+[; ;struct.h: 12: u8 quantity;
+[; ;struct.h: 13: u16 batTotal;
+[; ;struct.h: 14: u16 batV1;
+[; ;struct.h: 15: u16 batV2;
+[; ;struct.h: 16: u16 batILoad;
+[; ;struct.h: 17: u16 batChar;
+[; ;struct.h: 18: u16 batCharBank;
+[; ;struct.h: 19: u8 adcpwmDuty;
+[; ;struct.h: 20: u8 pwmDuty;
+[; ;struct.h: 21: u16 aVolTemp;
+[; ;struct.h: 22: u8 volCnt;
+[; ;struct.h: 23: u16 aVolBank;
+[; ;struct.h: 24: }_ADC;
+[; ;struct.h: 25: extern _ADC adc;
+[; ;struct.h: 27: typedef struct
+[; ;struct.h: 28: {
+[; ;struct.h: 29: u8 sw1Temp;
+[; ;struct.h: 30: u8 sw1Index;
+[; ;struct.h: 31: u8 sw2Temp;
+[; ;struct.h: 32: u8 sw2Index;
+[; ;struct.h: 33: u8 testmpp;
+[; ;struct.h: 34: }_KEY;
+[; ;struct.h: 35: extern _KEY key;
+[; ;struct.h: 37: typedef struct
+[; ;struct.h: 38: {
+[; ;struct.h: 39: u16 sw1Cnt;
+[; ;struct.h: 40: u16 sw2Cnt;
+[; ;struct.h: 41: u16 stanbyCnt;
+[; ;struct.h: 42: u16 work;
+[; ;struct.h: 43: u16 workStopCnt;
+[; ;struct.h: 44: u16 ledStopTime;
+[; ;struct.h: 45: u16 ledStopCnt;
+[; ;struct.h: 46: u16 low6_4v3sCnt;
+[; ;struct.h: 47: }_TIMER;
+[; ;struct.h: 48: extern _TIMER timer;
+[; ;struct.h: 50: typedef struct
+[; ;struct.h: 51: {
+[; ;struct.h: 52: u8 flicker1hzCnt;
+[; ;struct.h: 53: u8 flicker2hzCnt;
+[; ;struct.h: 54: u8 tempBank;
+[; ;struct.h: 55: }_LED;
+[; ;struct.h: 56: extern _LED led;
+[; ;struct.h: 58: typedef struct
+[; ;struct.h: 59: {
+[; ;struct.h: 60: u8 inWorkIndex;
+[; ;struct.h: 61: u8 motorLock;
+[; ;struct.h: 62: }_WORK;
+[; ;struct.h: 63: extern _WORK work;
+[; ;struct.h: 65: typedef struct
+[; ;struct.h: 66: {
+[; ;struct.h: 67: u8 pwmValue;
+[; ;struct.h: 68: u8 pwmCycle;
+[; ;struct.h: 70: }_SOFT;
+[; ;struct.h: 71: extern _SOFT soft;
+"10 F:\data\о�lSCMCU\JBQ-B04L1\soft\SOFT\Source\struct.c
+[v _adc `S14 ~T0 @X0 1 e ]
+[; ;struct.c: 10: _ADC adc;
+"11
+[v _key `S15 ~T0 @X0 1 e ]
+[; ;struct.c: 11: _KEY key;
+"12
+[v _timer `S16 ~T0 @X0 1 e ]
+[; ;struct.c: 12: _TIMER timer;
+"13
+[v _led `S17 ~T0 @X0 1 e ]
+[; ;struct.c: 13: _LED led;
+"14
+[v _work `S18 ~T0 @X0 1 e ]
+[; ;struct.c: 14: _WORK work;
+"15
+[v _soft `S19 ~T0 @X0 1 e ]
+[; ;struct.c: 15: _SOFT soft;

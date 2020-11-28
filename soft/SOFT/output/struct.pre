@@ -1,0 +1,261 @@
+
+# 1 "F:\data\о�lSCMCU\JBQ-B04L1\soft\SOFT\Source\struct.c"
+
+# 19 "F:\data\о�lSCMCU\JBQ-B04L1\soft\SOFT\Source\base.h"
+typedef unsigned char uchar;
+typedef unsigned short ushort;
+typedef unsigned int uint;
+typedef unsigned long ulong;
+
+typedef signed long s32;
+typedef signed short s16;
+typedef signed char s8;
+
+# 32
+typedef signed long const sc32;
+typedef signed short const sc16;
+typedef signed char const sc8;
+
+typedef volatile signed long vs32;
+typedef volatile signed short vs16;
+typedef volatile signed char vs8;
+
+# 45
+typedef volatile signed long const vsc32;
+typedef volatile signed short const vsc16;
+typedef volatile signed char const vsc8;
+
+typedef unsigned long u32;
+typedef unsigned short u16;
+typedef unsigned char u8;
+
+# 57
+typedef unsigned long const uc32;
+typedef unsigned short const uc16;
+typedef unsigned char const uc8;
+
+typedef volatile unsigned long vu32;
+typedef volatile unsigned short vu16;
+typedef volatile unsigned char vu8;
+
+# 69
+typedef volatile unsigned long const vuc32;
+typedef volatile unsigned short const vuc16;
+typedef volatile unsigned char const vuc8;
+
+
+typedef u8 uint8;
+typedef u16 uint16;
+typedef u32 uint32;
+typedef s8 int8;
+typedef s16 int16;
+typedef s32 int32;
+
+# 100
+typedef u8 uint8_t;
+typedef u16 uint16_t;
+typedef u32 uint32_t;
+typedef s8 int8_t;
+typedef s16 int16_t;
+typedef s32 int32_t;
+
+# 123
+typedef enum
+{
+FALSE = 0,
+TRUE = !FALSE
+} bool;
+
+typedef enum
+{
+RESET = 0,
+SET = !RESET
+} FlagStatus;
+
+typedef enum
+{
+DISABLE = 0,
+ENABLE = !DISABLE
+} FunctionalState;
+
+typedef enum
+{
+ERROR = 0,
+SUCCESS = !ERROR
+} ErrorStatus;
+
+# 188
+typedef union
+{
+struct
+{
+u8 h1:4;
+u8 h2:4;
+} hex;
+u8 num;
+} HEX_U8;
+
+typedef union
+{
+struct
+{
+u8 h3:4;
+u8 h4:4;
+u8 h1:4;
+u8 h2:4;
+} hex;
+struct
+{
+u8 b2;
+u8 b1;
+} byte;
+u8 bytes[2];
+u16 num;
+} HEX_U16;
+
+typedef union
+{
+struct
+{
+u8 h7:4;
+u8 h8:4;
+u8 h5:4;
+u8 h6:4;
+u8 h3:4;
+u8 h4:4;
+u8 h1:4;
+u8 h2:4;
+} hex;
+struct
+{
+u8 b4;
+u8 b3;
+u8 b2;
+u8 b1;
+} byte;
+u8 bytes[4];
+u32 num;
+} HEX_U32;
+
+
+typedef union
+{
+struct
+{
+u8 b0:1;
+u8 b1:1;
+u8 b2:1;
+u8 b3:1;
+u8 b4:1;
+u8 b5:1;
+u8 b6:1;
+u8 b7:1;
+} bits;
+u8 allBits;
+} FLAGS8;
+
+typedef union
+{
+struct
+{
+u8 H;
+u8 L;
+} byte;
+struct
+{
+u8 b8:1;
+u8 b9:1;
+u8 b10:1;
+u8 b11:1;
+u8 b12:1;
+u8 b13:1;
+u8 b14:1;
+u8 b15:1;
+u8 b0:1;
+u8 b1:1;
+u8 b2:1;
+u8 b3:1;
+u8 b4:1;
+u8 b5:1;
+u8 b6:1;
+u8 b7:1;
+} bits;
+u16 allBits;
+} FLAGS16;
+
+# 5 "F:\data\о�lSCMCU\JBQ-B04L1\soft\SOFT\Source\struct.h"
+typedef struct
+{
+u8 index;
+u8 chAisle;
+u8 chIndex;
+u16 adcBuffer;
+u16 adcBufferTemp;
+u8 quantity;
+u16 batTotal;
+u16 batV1;
+u16 batV2;
+u16 batILoad;
+u16 batChar;
+u16 batCharBank;
+u8 adcpwmDuty;
+u8 pwmDuty;
+u16 aVolTemp;
+u8 volCnt;
+u16 aVolBank;
+}_ADC;
+extern _ADC adc;
+
+typedef struct
+{
+u8 sw1Temp;
+u8 sw1Index;
+u8 sw2Temp;
+u8 sw2Index;
+u8 testmpp;
+}_KEY;
+extern _KEY key;
+
+typedef struct
+{
+u16 sw1Cnt;
+u16 sw2Cnt;
+u16 stanbyCnt;
+u16 work;
+u16 workStopCnt;
+u16 ledStopTime;
+u16 ledStopCnt;
+u16 low6_4v3sCnt;
+}_TIMER;
+extern _TIMER timer;
+
+typedef struct
+{
+u8 flicker1hzCnt;
+u8 flicker2hzCnt;
+u8 tempBank;
+}_LED;
+extern _LED led;
+
+typedef struct
+{
+u8 inWorkIndex;
+u8 motorLock;
+}_WORK;
+extern _WORK work;
+
+typedef struct
+{
+u8 pwmValue;
+u8 pwmCycle;
+
+}_SOFT;
+extern _SOFT soft;
+
+# 10 "F:\data\о�lSCMCU\JBQ-B04L1\soft\SOFT\Source\struct.c"
+_ADC adc;
+_KEY key;
+_TIMER timer;
+_LED led;
+_WORK work;
+_SOFT soft;

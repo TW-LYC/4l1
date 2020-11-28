@@ -1,0 +1,35 @@
+<NotepadPlus>
+    <Project name="LLJ-D04Y5_V10">
+        <File name="Source\base.h" />
+        <File name="Source\function.c" />
+        <File name="Source\function.h" />
+        <File name="Source\global.h" />
+        <File name="Source\main.c" />
+        <File name="Source\mcu_adc.c" />
+        <File name="Source\mcu_adc.h" />
+        <File name="Source\mcu_config.c" />
+        <File name="Source\mcu_config.h" />
+        <File name="Source\mcu_gpio.c" />
+        <File name="Source\mcu_gpio.h" />
+        <File name="Source\mcu_int.c" />
+        <File name="Source\mcu_int.h" />
+        <File name="Source\mcu_pwm.c" />
+        <File name="Source\mcu_pwm.h" />
+        <File name="Source\mcu_timer.c" />
+        <File name="Source\mcu_timer.h" />
+        <Folder name="ref">
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\motor.h" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\MCU_ISR.h" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\MCU.H" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\main.h" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\GLOBAL.H" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\FUNCTION.H" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\motor.c" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\MCU_ISR.C" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\MCU.C" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\MAIN.C" />
+            <File name="E:\wangxq\&#x5C0F;&#x718A;-LLJ-D03M1\Software\LLJ-D03M1_V2\FUNCTION.C" />
+        </Folder>
+        <File name="Source\var_define.h" />
+    </Project>
+</NotepadPlus>

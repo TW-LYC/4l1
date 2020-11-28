@@ -1,0 +1,119 @@
+Warning[361]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第665行	function declared implicit int
+Warning[361]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第730行	function declared implicit int
+Warning[361]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第752行	function declared implicit int
+Warning[373]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第111行	implicit signed to unsigned conversion
+Warning[373]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第123行	implicit signed to unsigned conversion
+Warning[373]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_pwm.c	第45行	implicit signed to unsigned conversion
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第46行	function "_DelayUs" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第305行	function "_ADC_Deal" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第372行	function "_BAT_Init" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第385行	function "_PwmDutyDriver" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第453行	function "_BAT_Driver" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第607行	function "_FUN_EnterStandby" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第621行	function "_FUN_EnterWorkMode" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第642行	function "_FUN_Init" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第656行	function "_FUN_Driver" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第768行	function "_Move_Function" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function_work.c	第18行	function "_Soft_ON" is never called
+Warning[520]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_pwm.c	第40行	function "_MCU_PWM2_SetDuty" is never called
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\struct.c	第15行	variable "_soft" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第76行	variable "_gFun_ledTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第50行	variable "_gFun_adChrCur" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第49行	variable "_gFun_adBatVol" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第47行	variable "_gFun_adcBufferSum" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第46行	variable "_gFun_adcBuffer" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function_work.c	第13行	variable "_motorWorkTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第40行	variable "_firstSleepTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第39行	variable "_adStart5sCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第42行	variable "_gFun_workTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第52行	variable "_gFun_adMidVol3" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第51行	variable "_gFun_adMidVol2" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第53行	variable "_gFun_chrBatCur" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第48行	variable "_gFun_adBatCur" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第80行	variable "_gBat_chrPwmAimCur" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第54行	variable "_gFun_chrUsbCur" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第79行	variable "_gBat_chrPwmDuty" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第55行	variable "_gFun_batCur" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第57行	variable "_gFun_batMidVol" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第59行	variable "_gFun_batMidVol3" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第58行	variable "_gFun_batMidVol2" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第56行	variable "_gFun_batVol" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第74行	variable "_gFun_ledCnt_2hz" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第73行	variable "_gFun_ledCnt_1hz" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第71行	variable "_gFun_cupUsbTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第70行	variable "_gFun_cupUsbState" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第69行	variable "_gFun_cupUsbCode" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第68行	variable "_gFun_cupUsbCodeBuff" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第66行	variable "_gFun_keyTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第45行	variable "_gFun_adcCh" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第44行	variable "_gFun_adcChIndex" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第43行	variable "_gFun_adcIndex" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第56行	variable "_KeyTime" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第54行	variable "_keyTemp" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第41行	variable "_gFun_workTimeCntFor1s" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第67行	variable "_gFun_keyIdleCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第81行	variable "_gBat_chrPwmDelayCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第83行	variable "_gBat_chrCvDelayCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第78行	variable "_gBat_chrState" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第82行	variable "_gBat_chrPwmDelay" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第61行	variable "_gFun_motoCurrState" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第60行	variable "_gFun_batVolState" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第62行	variable "_gFun_adcDealDelay" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第63行	variable "_gFun_ocpTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第64行	variable "_gFun_ucpTimeCnt" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function_work.c	第219行	variable "_charIndex" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第380行	variable "_isErrorNeg" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第154行	variable "_gbLedEnd" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第126行	variable "_cupIndex" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第55行	variable "_keyDouble" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第41行	variable "_firstSleepIndex" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第36行	variable "_gbKeyClick" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第37行	variable "_gbKeyDouClick" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第38行	variable "_gbWorkLowVol" is not used
+Warning[1090]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\var_define.h	第77行	variable "_gFun_ledStopCnt" is not used
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第203行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第208行	conversion to shorter data type
+Warning[759]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\function.c	第598行	expression generates no code
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第92行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第94行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第111行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第142行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第199行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第200行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_adc.c	第215行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_config.c	第65行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_config.c	第122行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第29行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第30行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第31行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第32行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第33行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第34行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第38行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第39行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第40行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第41行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第42行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第43行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第63行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第64行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第65行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第66行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第67行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第68行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第72行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第73行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第74行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第75行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第76行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_gpio.c	第77行	conversion to shorter data type
+Warning[752]:	F:\data\芯聯發SCMCU\JBQ-B04L1\soft\SOFT\Source\mcu_timer.c	第132行	conversion to shorter data type
+
+Memory Summary:
+    Program space        used   6CEh (  1742) of  1000h words   ( 42.5%)
+    Data space           used    6Bh (   107) of   148h bytes   ( 32.6%)
+    EEPROM space         None available
+    Data stack space     used     0h (     0) of    58h bytes   (  0.0%)
+    Configuration bits   used     0h (     0) of     2h words   (  0.0%)
+    ID Location space    used     0h (     0) of     4h bytes   (  0.0%)
+

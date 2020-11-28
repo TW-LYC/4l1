@@ -1,0 +1,3187 @@
+
+
+HI-TECH Software PIC PRO Macro Assembler V9.83 build 10920 
+                                                                                               Sun Apr 19 17:56:31 2020
+
+HI-TECH Software Omniscient Code Generator (PRO mode) build 10920
+     1                           	processor	16F685
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	text600,local,class=CODE,delta=2
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,delta=2
+     7                           	psect	bitbssCOMMON,global,bit,class=COMMON,space=1,delta=1
+     8                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     9                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	clrtext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    13                           	psect	maintext,global,class=CODE,delta=2
+    14                           	psect	text601,local,class=CODE,delta=2
+    15                           	psect	text602,local,class=CODE,delta=2
+    16                           	psect	text603,local,class=CODE,delta=2
+    17                           	psect	text604,local,class=CODE,delta=2
+    18                           	psect	text605,local,class=CODE,delta=2
+    19                           	psect	text606,local,class=CODE,delta=2
+    20                           	psect	text607,local,class=CODE,delta=2
+    21                           	psect	text608,local,class=CODE,delta=2
+    22                           	psect	text609,local,class=CODE,delta=2
+    23                           	psect	text610,local,class=CODE,delta=2
+    24                           	psect	text611,local,class=CODE,delta=2
+    25                           	psect	text612,local,class=CODE,delta=2
+    26                           	psect	text613,local,class=CODE,delta=2
+    27                           	psect	text614,local,class=CODE,delta=2
+    28                           	psect	text615,local,class=CODE,delta=2
+    29                           	psect	swtext1,local,class=CONST,delta=2
+    30                           	psect	text616,local,class=CODE,delta=2
+    31                           	psect	text617,local,class=CODE,delta=2
+    32                           	psect	text618,local,class=CODE,delta=2
+    33                           	psect	text619,local,class=CODE,delta=2
+    34                           	psect	text620,local,class=CODE,delta=2
+    35                           	psect	intentry,global,class=CODE,delta=2
+    36                           	psect	text621,local,class=CODE,delta=2
+    37                           	psect	pa_nodes,global,class=CODE,delta=2
+    38                           	dabs	1,0x19D,1
+    39                           	dabs	1,0x19E,1
+    40                           	dabs	1,0x19E,1
+    41                           	dabs	1,0x19E,1
+    42                           	dabs	1,0x18C,1
+    43                           	dabs	1,0x19E,1
+    44                           	dabs	1,0x19E,1
+    45                           	dabs	1,0x19E,1
+    46                           	dabs	1,0x19E,1
+    47                           	dabs	1,0x19D,1
+    48                           	dabs	1,0x19D,1
+    49                           	dabs	1,0x19D,1
+    50                           	dabs	1,0x19D,1
+    51                           	dabs	1,0x19D,1
+    52                           	dabs	1,0x18C,1
+    53                           	dabs	1,0x7E,2
+    54  000A                     
+    55                           	psect	text600
+    56  0000                     __ptext600:	
+    57  019D                     _PSTRCON	set	413	;_PSTRCON
+    58  019E                     _SRCON	set	414	;_SRCON
+    59  0CF5                     _C1SEN	set	3317	;_C1SEN
+    60  0CF4                     _C2REN	set	3316	;_C2REN
+    61  0C67                     _EEPGD	set	3175	;_EEPGD
+    62  0CF2                     _PULSR	set	3314	;_PULSR
+    63  0CF3                     _PULSS	set	3315	;_PULSS
+    64  0CF6                     _SR0	set	3318	;_SR0
+    65  0CF7                     _SR1	set	3319	;_SR1
+    66  0CE8                     _STRA	set	3304	;_STRA
+    67  0CE9                     _STRB	set	3305	;_STRB
+    68  0CEA                     _STRC	set	3306	;_STRC
+    69  0CEB                     _STRD	set	3307	;_STRD
+    70  0CEC                     _STRSYNC	set	3308	;_STRSYNC
+    71  0C62                     _WREN	set	3170	;_WREN
+    72                           
+    73                           	psect	nvBANK0
+    74  0044                     __pnvBANK0:	
+    75  0044                     _gFun_keyIdleCnt:	
+    76  0044                     	ds	1
+    77  001F                     _ADCON0	set	31
+    78  001E                     _ADRESH	set	30
+    79  0019                     _CMCON0	set	25
+    80  000B                     _INTCON	set	11
+    81  001B                     _MSCKCON	set	27
+    82  0005                     _PORTA	set	5
+    83  0007                     _PORTC	set	7
+    84  0012                     _T2CON	set	18
+    85  0011                     _TMR2	set	17
+    86  00F8                     _ADON	set	248
+    87  005F                     _GIE	set	95
+    88  00F9                     _GO_DONE	set	249
+    89  005B                     _PAIE	set	91
+    90  0058                     _PAIF	set	88
+    91  005E                     _PEIE	set	94
+    92  0028                     _RA0	set	40
+    93  0029                     _RA1	set	41
+    94  002A                     _RA2	set	42
+    95  002B                     _RA3	set	43
+    96  002C                     _RA4	set	44
+    97  003A                     _RC2	set	58
+    98  003B                     _RC3	set	59
+    99  0061                     _TMR2IF	set	97
+   100  0092                     _TMR2ON	set	146
+   101  009F                     _ADCON1	set	159
+   102  009E                     _ADRESL	set	158
+   103  0091                     _ANSEL	set	145
+   104  0096                     _IOCA	set	150
+   105  0081                     _OPTION	set	129
+   106  008F                     _OSCCON	set	143
+   107  0092                     _PR2	set	146
+   108  0085                     _TRISA	set	133
+   109  0087                     _TRISC	set	135
+   110  0095                     _WPUA	set	149
+   111  0088                     _WPUC	set	136
+   112  04B0                     _IOCA0	set	1200
+   113  04B1                     _IOCA1	set	1201
+   114  04B2                     _IOCA2	set	1202
+   115  04B3                     _IOCA3	set	1203
+   116  0461                     _TMR2IE	set	1121
+   117                           
+   118                           	psect	cinit
+   119  02F8                     start_initialization:	
+   120  02F8  3020               	movlw	low __pbssBANK0
+   121                           
+   122                           ; Clear objects allocated to BITCOMMON
+   123  02F9  01F0               	clrf	(__pbitbssCOMMON/(0+8))& (0+127)
+   124  02FA  01F1               	clrf	((__pbitbssCOMMON/(0+8)+1))& (0+127)
+   125                           
+   126                           ; Clear objects allocated to COMMON
+   127  02FB  01F7               	clrf	__pbssCOMMON& (0+127)
+   128                           
+   129                           ; Clear objects allocated to BANK0
+   130  02FC  1383               	bcf	3,7	;select IRP bank0
+   131  02FD  0084               	movwf	4
+   132  02FE  303E               	movlw	low (__pbssBANK0+30)
+   133  02FF  230C               	fcall	clear_ram
+   134  0300                     end_of_initialization:	
+   135                           ;End of C runtime variable initialization code
+   136                           
+   137  0300  0183               	clrf	3
+   138  0301  2AD0               	ljmp	_main	;jump to C main() function
+   139                           
+   140                           	psect	bitbssCOMMON
+   141  0380                     __pbitbssCOMMON:	
+   142  0380                     _bTime10ms:	
+   143  0380                     	ds	1
+   144  0381                     _bkeyBuff:	
+   145  0381                     	ds	1
+   146  0382                     _bkeyCode:	
+   147  0382                     	ds	1
+   148  0383                     _bkeyDou:	
+   149  0383                     	ds	1
+   150  0384                     _bkeyTemp:	
+   151  0384                     	ds	1
+   152  0385                     _bkeyUp:	
+   153  0385                     	ds	1
+   154  0386                     _gIsCupOk:	
+   155  0386                     	ds	1
+   156  0387                     _gbCupEvent:	
+   157  0387                     	ds	1
+   158  0388                     _gbKeyClick:	
+   159  0388                     	ds	1
+   160  0389                     _gbKeyDouClick:	
+   161  0389                     	ds	1
+   162  038A                     _gbLed1hz:	
+   163  038A                     	ds	1
+   164  038B                     _gbLed2hz:	
+   165  038B                     	ds	1
+   166  038C                     _gbLedEnd:	
+   167  038C                     	ds	1
+   168  038D                     _gbLedWait:	
+   169  038D                     	ds	1
+   170  038E                     _gbOcp:	
+   171  038E                     	ds	1
+   172  038F                     _gbUcp:	
+   173  038F                     	ds	1
+   174                           
+   175                           	psect	bssCOMMON
+   176  0077                     __pbssCOMMON:	
+   177  0077                     _gFun_workMode:	
+   178  0077                     	ds	1
+   179                           
+   180                           	psect	bssBANK0
+   181  0020                     __pbssBANK0:	
+   182  0020                     _gFun_adBatVol:	
+   183  0020                     	ds	2
+   184  0022                     _gFun_adCurrent:	
+   185  0022                     	ds	2
+   186  0024                     _gFun_adcBuffer:	
+   187  0024                     	ds	2
+   188  0026                     _gFun_adcBufferSum:	
+   189  0026                     	ds	2
+   190  0028                     _gFun_ledStopCnt:	
+   191  0028                     	ds	2
+   192  002A                     _gFun_ledTimeCnt:	
+   193  002A                     	ds	2
+   194  002C                     _gFun_workTimeCnt:	
+   195  002C                     	ds	2
+   196  002E                     _bakPORTA:	
+   197  002E                     	ds	1
+   198  002F                     _gFun_adcChIndex:	
+   199  002F                     	ds	1
+   200  0030                     _gFun_adcDealDelay:	
+   201  0030                     	ds	1
+   202  0031                     _gFun_adcIndex:	
+   203  0031                     	ds	1
+   204  0032                     _gFun_batVolState:	
+   205  0032                     	ds	1
+   206  0033                     _gFun_chrState:	
+   207  0033                     	ds	1
+   208  0034                     _gFun_cupchrCodeBuff:	
+   209  0034                     	ds	1
+   210  0035                     _gFun_cupchrTimeCnt:	
+   211  0035                     	ds	1
+   212  0036                     _gFun_keyTimeCnt:	
+   213  0036                     	ds	1
+   214  0037                     _gFun_ledCnt_1hz:	
+   215  0037                     	ds	1
+   216  0038                     _gFun_ledCnt_2hz:	
+   217  0038                     	ds	1
+   218  0039                     _gFun_ledMode:	
+   219  0039                     	ds	1
+   220  003A                     _gFun_ocpTimeCnt:	
+   221  003A                     	ds	1
+   222  003B                     _gFun_ucpTimeCnt:	
+   223  003B                     	ds	1
+   224  003C                     _gFun_workTimeCntFor1s:	
+   225  003C                     	ds	1
+   226  003D                     _gTimeCntFor10ms:	
+   227  003D                     	ds	1
+   228                           
+   229                           	psect	clrtext
+   230  030C                     clear_ram:	
+   231                           ;	Called with FSR containing the base address, and
+   232                           ;	W with the last address+1
+   233                           
+   234  030C  0064               	clrwdt	;clear the watchdog before getting into this loop
+   235  030D                     clrloop:	
+   236  030D  0180               	clrf	0	;clear RAM location pointed to by FSR
+   237  030E  0A84               	incf	4,f	;increment pointer
+   238  030F  0604               	xorwf	4,w	;XOR with final address
+   239  0310  1903               	btfsc	3,2	;have we reached the end yet?
+   240  0311  3400               	retlw	0	;all done for this memory range, return
+   241  0312  0604               	xorwf	4,w	;XOR again to restore value
+   242  0313  2B0D               	goto	clrloop	;do the next byte
+   243                           
+   244                           	psect	cstackCOMMON
+   245  0072                     __pcstackCOMMON:	
+   246  0072                     ?_MCU_SleepConfig:	
+   247  0072                     ?_MCU_Init:	
+   248                           ; 0 bytes @ 0x0
+   249                           
+   250  0072                     ?_MOTO_Driver:	
+   251                           ; 0 bytes @ 0x0
+   252                           
+   253  0072                     ?_DelayUs:	
+   254                           ; 0 bytes @ 0x0
+   255                           
+   256  0072                     ?_CUP_CHR_Driver:	
+   257                           ; 0 bytes @ 0x0
+   258                           
+   259  0072                     ?_MCU_EnterSleep:	
+   260                           ; 0 bytes @ 0x0
+   261                           
+   262  0072                     ?_KEY_Driver:	
+   263                           ; 0 bytes @ 0x0
+   264                           
+   265  0072                     ?_ADC_Driver:	
+   266                           ; 0 bytes @ 0x0
+   267                           
+   268  0072                     ?_ADC_Deal:	
+   269                           ; 0 bytes @ 0x0
+   270                           
+   271  0072                     ?_FUN_Init:	
+   272                           ; 0 bytes @ 0x0
+   273                           
+   274  0072                     ?_LED_SetMode:	
+   275                           ; 0 bytes @ 0x0
+   276                           
+   277  0072                     ?_LED_Display:	
+   278                           ; 0 bytes @ 0x0
+   279                           
+   280  0072                     ?_FUN_EnterStandby:	
+   281                           ; 0 bytes @ 0x0
+   282                           
+   283  0072                     ?_FUN_EnterWorkMode:	
+   284                           ; 0 bytes @ 0x0
+   285                           
+   286  0072                     ?_FUN_Driver:	
+   287                           ; 0 bytes @ 0x0
+   288                           
+   289  0072                     ?_main:	
+   290                           ; 0 bytes @ 0x0
+   291                           
+   292  0072                     ?_CLK_Init:	
+   293                           ; 0 bytes @ 0x0
+   294                           
+   295  0072                     ?_TIM_Init:	
+   296                           ; 0 bytes @ 0x0
+   297                           
+   298  0072                     ?_ADC_Init:	
+   299                           ; 0 bytes @ 0x0
+   300                           
+   301  0072                     ?_ISR:	
+   302                           ; 0 bytes @ 0x0
+   303                           
+   304  0072                     ??_ISR:	
+   305                           ; 0 bytes @ 0x0
+   306                           
+   307                           
+   308                           ; 0 bytes @ 0x0
+   309  0072                     	ds	2
+   310  0074                     ??_MCU_Init:	
+   311  0074                     ??_MOTO_Driver:	
+   312                           ; 0 bytes @ 0x2
+   313                           
+   314  0074                     ??_DelayUs:	
+   315                           ; 0 bytes @ 0x2
+   316                           
+   317  0074                     ??_KEY_Driver:	
+   318                           ; 0 bytes @ 0x2
+   319                           
+   320  0074                     ??_ADC_Deal:	
+   321                           ; 0 bytes @ 0x2
+   322                           
+   323  0074                     ??_FUN_Init:	
+   324                           ; 0 bytes @ 0x2
+   325                           
+   326  0074                     ??_LED_SetMode:	
+   327                           ; 0 bytes @ 0x2
+   328                           
+   329  0074                     ??_LED_Display:	
+   330                           ; 0 bytes @ 0x2
+   331                           
+   332  0074                     ??_FUN_EnterStandby:	
+   333                           ; 0 bytes @ 0x2
+   334                           
+   335  0074                     ??_FUN_EnterWorkMode:	
+   336                           ; 0 bytes @ 0x2
+   337                           
+   338  0074                     ??_CLK_Init:	
+   339                           ; 0 bytes @ 0x2
+   340                           
+   341  0074                     ??_TIM_Init:	
+   342                           ; 0 bytes @ 0x2
+   343                           
+   344  0074                     ??_ADC_Init:	
+   345                           ; 0 bytes @ 0x2
+   346                           
+   347  0074                     DelayUs@time:	
+   348                           ; 0 bytes @ 0x2
+   349                           
+   350  0074                     LED_SetMode@mode:	
+   351                           ; 1 bytes @ 0x2
+   352                           
+   353                           
+   354                           ; 1 bytes @ 0x2
+   355  0074                     	ds	1
+   356  0075                     ??_MCU_SleepConfig:	
+   357  0075                     ??_CUP_CHR_Driver:	
+   358                           ; 0 bytes @ 0x3
+   359                           
+   360  0075                     ?_GetAd:	
+   361                           ; 0 bytes @ 0x3
+   362                           
+   363  0075                     CUP_CHR_Driver@cupchrStateCode:	
+   364                           ; 2 bytes @ 0x3
+   365                           
+   366  0075                     MCU_SleepConfig@isSleep:	
+   367                           ; 1 bytes @ 0x3
+   368                           
+   369                           
+   370                           ; 1 bytes @ 0x3
+   371  0075                     	ds	1
+   372  0076                     ??_MCU_EnterSleep:	
+   373  0076                     ??_FUN_Driver:	
+   374                           ; 0 bytes @ 0x4
+   375                           
+   376                           
+   377                           ; 0 bytes @ 0x4
+   378  0076                     	ds	1
+   379  0077                     ??_GetAd:	
+   380  0077                     ??_ADC_Driver:	
+   381                           ; 0 bytes @ 0x5
+   382                           
+   383  0077                     ??_main:	
+   384                           ; 0 bytes @ 0x5
+   385                           
+   386                           
+   387                           	psect	cstackBANK0
+   388  003E                     __pcstackBANK0:	
+   389                           ; 0 bytes @ 0x5
+   390                           
+   391  003E                     GetAd@ch:	
+   392                           
+   393                           ; 1 bytes @ 0x0
+   394  003E                     	ds	1
+   395  003F                     GetAd@tBuffer:	
+   396                           
+   397                           ; 2 bytes @ 0x1
+   398  003F                     	ds	2
+   399  0041                     GetAd@ADCON0Buff:	
+   400                           
+   401                           ; 1 bytes @ 0x3
+   402  0041                     	ds	1
+   403  0042                     GetAd@ADC_DATA:	
+   404                           
+   405                           ; 2 bytes @ 0x4
+   406  0042                     	ds	2
+   407                           
+   408                           	psect	maintext
+   409  02D0                     __pmaintext:	
+   410 ;;Data sizes: Strings 0, constant 0, data 0, bss 31, persistent 1 stack 0
+   411 ;;Auto spaces:   Size  Autos    Used
+   412 ;; COMMON          14      5       8
+   413 ;; BANK0           80      6      37
+   414 ;; BANK1           32      0       0
+   415 ;;
+   416 ;; Pointer list with targets:
+   417 ;; ?_GetAd	unsigned short  size(1) Largest target is 0
+   418 ;;
+   419 ;;
+   420 ;; Critical Paths under _main in COMMON
+   421 ;;
+   422 ;;   _ADC_Driver->_GetAd
+   423 ;;   _MCU_EnterSleep->_MCU_SleepConfig
+   424 ;;   _MCU_SleepConfig->_DelayUs
+   425 ;;   _GetAd->_DelayUs
+   426 ;;   _CUP_CHR_Driver->_DelayUs
+   427 ;;
+   428 ;; Critical Paths under _ISR in COMMON
+   429 ;;
+   430 ;;   None.
+   431 ;;
+   432 ;; Critical Paths under _main in BANK0
+   433 ;;
+   434 ;;   _ADC_Driver->_GetAd
+   435 ;;
+   436 ;; Critical Paths under _ISR in BANK0
+   437 ;;
+   438 ;;   None.
+   439 ;;
+   440 ;; Critical Paths under _main in BANK1
+   441 ;;
+   442 ;;   None.
+   443 ;;
+   444 ;; Critical Paths under _ISR in BANK1
+   445 ;;
+   446 ;;   None.
+   447 ;;
+   448 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   449 ;;
+   450 ;;
+   451 ;;Call Graph Tables:
+   452 ;;
+   453 ;; ---------------------------------------------------------------------------------
+   454 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   455 ;; ---------------------------------------------------------------------------------
+   456 ;; (0) _main                                                 0     0      0     571
+   457 ;;                           _MCU_Init
+   458 ;;                           _FUN_Init
+   459 ;;                         _KEY_Driver
+   460 ;;                     _CUP_CHR_Driver
+   461 ;;                         _FUN_Driver
+   462 ;;                         _ADC_Driver
+   463 ;;                           _ADC_Deal
+   464 ;;                        _LED_Display
+   465 ;;                        _MOTO_Driver
+   466 ;; ---------------------------------------------------------------------------------
+   467 ;; (1) _FUN_Driver                                           0     0      0     247
+   468 ;;                   _FUN_EnterStandby
+   469 ;;                        _LED_SetMode
+   470 ;;                  _FUN_EnterWorkMode
+   471 ;;                     _MCU_EnterSleep
+   472 ;; ---------------------------------------------------------------------------------
+   473 ;; (1) _ADC_Driver                                           0     0      0     185
+   474 ;;                              _GetAd
+   475 ;; ---------------------------------------------------------------------------------
+   476 ;; (2) _MCU_EnterSleep                                       0     0      0      93
+   477 ;;                    _MCU_SleepConfig
+   478 ;;                            _DelayUs
+   479 ;; ---------------------------------------------------------------------------------
+   480 ;; (3) _MCU_SleepConfig                                      1     1      0      62
+   481 ;;                                              3 COMMON     1     1      0
+   482 ;;                            _DelayUs
+   483 ;; ---------------------------------------------------------------------------------
+   484 ;; (2) _GetAd                                                9     7      2     185
+   485 ;;                                              3 COMMON     2     0      2
+   486 ;;                                              0 BANK0      6     6      0
+   487 ;;                            _DelayUs
+   488 ;; ---------------------------------------------------------------------------------
+   489 ;; (1) _CUP_CHR_Driver                                       1     1      0     139
+   490 ;;                                              3 COMMON     1     1      0
+   491 ;;                            _DelayUs
+   492 ;; ---------------------------------------------------------------------------------
+   493 ;; (1) _MCU_Init                                             0     0      0       0
+   494 ;;                           _CLK_Init
+   495 ;;                           _TIM_Init
+   496 ;;                           _ADC_Init
+   497 ;; ---------------------------------------------------------------------------------
+   498 ;; (3) _DelayUs                                              1     1      0      31
+   499 ;;                                              2 COMMON     1     1      0
+   500 ;; ---------------------------------------------------------------------------------
+   501 ;; (2) _ADC_Init                                             0     0      0       0
+   502 ;; ---------------------------------------------------------------------------------
+   503 ;; (2) _TIM_Init                                             0     0      0       0
+   504 ;; ---------------------------------------------------------------------------------
+   505 ;; (2) _CLK_Init                                             0     0      0       0
+   506 ;; ---------------------------------------------------------------------------------
+   507 ;; (1) _MOTO_Driver                                          0     0      0       0
+   508 ;; ---------------------------------------------------------------------------------
+   509 ;; (2) _FUN_EnterWorkMode                                    0     0      0       0
+   510 ;; ---------------------------------------------------------------------------------
+   511 ;; (2) _FUN_EnterStandby                                     0     0      0       0
+   512 ;; ---------------------------------------------------------------------------------
+   513 ;; (1) _LED_Display                                          0     0      0       0
+   514 ;; ---------------------------------------------------------------------------------
+   515 ;; (2) _LED_SetMode                                          1     1      0     154
+   516 ;;                                              2 COMMON     1     1      0
+   517 ;; ---------------------------------------------------------------------------------
+   518 ;; (1) _FUN_Init                                             0     0      0       0
+   519 ;; ---------------------------------------------------------------------------------
+   520 ;; (1) _ADC_Deal                                             0     0      0       0
+   521 ;; ---------------------------------------------------------------------------------
+   522 ;; (1) _KEY_Driver                                           1     1      0       0
+   523 ;;                                              2 COMMON     1     1      0
+   524 ;; ---------------------------------------------------------------------------------
+   525 ;; Estimated maximum stack depth 3
+   526 ;; ---------------------------------------------------------------------------------
+   527 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   528 ;; ---------------------------------------------------------------------------------
+   529 ;; (5) _ISR                                                  2     2      0       0
+   530 ;;                                              0 COMMON     2     2      0
+   531 ;; ---------------------------------------------------------------------------------
+   532 ;; Estimated maximum stack depth 5
+   533 ;; ---------------------------------------------------------------------------------
+   534 ;; Call Graph Graphs:
+   535 ;; _main (ROOT)
+   536 ;;   _MCU_Init
+   537 ;;     _CLK_Init
+   538 ;;     _TIM_Init
+   539 ;;     _ADC_Init
+   540 ;;   _FUN_Init
+   541 ;;   _KEY_Driver
+   542 ;;   _CUP_CHR_Driver
+   543 ;;     _DelayUs
+   544 ;;   _FUN_Driver
+   545 ;;     _FUN_EnterStandby
+   546 ;;     _LED_SetMode
+   547 ;;     _FUN_EnterWorkMode
+   548 ;;     _MCU_EnterSleep
+   549 ;;       _MCU_SleepConfig
+   550 ;;         _DelayUs
+   551 ;;       _DelayUs
+   552 ;;   _ADC_Driver
+   553 ;;     _GetAd
+   554 ;;       _DelayUs
+   555 ;;   _ADC_Deal
+   556 ;;   _LED_Display
+   557 ;;   _MOTO_Driver
+   558 ;;
+   559 ;; _ISR (ROOT)
+   560 ;;
+   561 ;; Address spaces:
+   562 ;;Name               Size   Autos  Total    Cost      Usage
+   563 ;;BITCOMMON            E      0       2       0       14.3%
+   564 ;;EEDATA             100      0       0       0        0.0%
+   565 ;;NULL                 0      0       0       0        0.0%
+   566 ;;CODE                 0      0       0       0        0.0%
+   567 ;;COMMON               E      5       8       1       57.1%
+   568 ;;BITSFR0              0      0       0       1        0.0%
+   569 ;;SFR0                 0      0       0       1        0.0%
+   570 ;;BITSFR1              0      0       0       2        0.0%
+   571 ;;SFR1                 0      0       0       2        0.0%
+   572 ;;STACK                0      0       4       2        0.0%
+   573 ;;BITBANK0            50      0       0       3        0.0%
+   574 ;;BANK0               50      6      25       4       46.3%
+   575 ;;BITBANK1            20      0       0       5        0.0%
+   576 ;;BITSFR2              0      0       0       5        0.0%
+   577 ;;SFR2                 0      0       0       5        0.0%
+   578 ;;BANK1               20      0       0       6        0.0%
+   579 ;;ABS                  0      0      2D       7        0.0%
+   580 ;;DATA                 0      0      31       8        0.0%
+   581                           
+   582                           
+   583 ;; *************** function _main *****************
+   584 ;; Defined at:
+   585 ;;		line 17 in file "main.c"
+   586 ;; Parameters:    Size  Location     Type
+   587 ;;		None
+   588 ;; Auto vars:     Size  Location     Type
+   589 ;;		None
+   590 ;; Return value:  Size  Location     Type
+   591 ;;		None               void
+   592 ;; Registers used:
+   593 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   594 ;; Tracked objects:
+   595 ;;		On entry : 17F/0
+   596 ;;		On exit  : 60/0
+   597 ;;		Unchanged: 0/0
+   598 ;; Data sizes:     COMMON   BANK0   BANK1
+   599 ;;      Params:         0       0       0
+   600 ;;      Locals:         0       0       0
+   601 ;;      Temps:          0       0       0
+   602 ;;      Totals:         0       0       0
+   603 ;;Total ram usage:        0 bytes
+   604 ;; Hardware stack levels required when called:    5
+   605 ;; This function calls:
+   606 ;;		_MCU_Init
+   607 ;;		_FUN_Init
+   608 ;;		_KEY_Driver
+   609 ;;		_CUP_CHR_Driver
+   610 ;;		_FUN_Driver
+   611 ;;		_ADC_Driver
+   612 ;;		_ADC_Deal
+   613 ;;		_LED_Display
+   614 ;;		_MOTO_Driver
+   615 ;; This function is called by:
+   616 ;;		Startup code after reset
+   617 ;; This function uses a non-reentrant model
+   618 ;;
+   619  02D0                     _main:	
+   620                           
+   621                           ;main.c: 18: MCU_Init();
+   622                           
+   623                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   624  02D0  2335               	fcall	_MCU_Init
+   625                           
+   626                           ;main.c: 19: FUN_Init();
+   627  02D1  2331               	fcall	_FUN_Init
+   628                           
+   629                           ;main.c: 20: GIE = 1;
+   630  02D2  178B               	bsf	11,7
+   631  02D3                     l7966:	
+   632                           
+   633                           ;main.c: 23: {
+   634                           ;main.c: 24: if (bTime10ms) {
+   635  02D3  1C70               	btfss	_bTime10ms/(0+8),_bTime10ms& (0+7)
+   636  02D4  2AD3               	goto	l7966
+   637                           
+   638                           ;main.c: 25: bTime10ms = 0;
+   639  02D5  1070               	bcf	_bTime10ms/(0+8),_bTime10ms& (0+7)
+   640                           
+   641                           ;main.c: 27: KEY_Driver();
+   642  02D6  20A8               	fcall	_KEY_Driver
+   643                           
+   644                           ;main.c: 28: CUP_CHR_Driver();
+   645  02D7  2216               	fcall	_CUP_CHR_Driver
+   646                           
+   647                           ;main.c: 29: FUN_Driver();
+   648  02D8  200B               	fcall	_FUN_Driver
+   649                           
+   650                           ;main.c: 30: ADC_Driver();
+   651  02D9  21E3               	fcall	_ADC_Driver
+   652                           
+   653                           ;main.c: 31: ADC_Deal();
+   654  02DA  2155               	fcall	_ADC_Deal
+   655                           
+   656                           ;main.c: 32: LED_Display();
+   657  02DB  2101               	fcall	_LED_Display
+   658                           
+   659                           ;main.c: 33: MOTO_Driver();
+   660  02DC  2338               	fcall	_MOTO_Driver
+   661  02DD  2AD3               	goto	l7966
+   662  02DE                     __end_of_main:	
+   663                           
+   664                           	psect	text601
+   665  000B                     __ptext601:	
+   666 ;; =============== function _main ends ============
+   667                           
+   668                           
+   669 ;; *************** function _FUN_Driver *****************
+   670 ;; Defined at:
+   671 ;;		line 531 in file "FUNCTION.C"
+   672 ;; Parameters:    Size  Location     Type
+   673 ;;		None
+   674 ;; Auto vars:     Size  Location     Type
+   675 ;;		None
+   676 ;; Return value:  Size  Location     Type
+   677 ;;		None               void
+   678 ;; Registers used:
+   679 ;;		wreg, status,2, status,0, pclath, cstack
+   680 ;; Tracked objects:
+   681 ;;		On entry : 60/0
+   682 ;;		On exit  : 60/0
+   683 ;;		Unchanged: 0/0
+   684 ;; Data sizes:     COMMON   BANK0   BANK1
+   685 ;;      Params:         0       0       0
+   686 ;;      Locals:         0       0       0
+   687 ;;      Temps:          0       0       0
+   688 ;;      Totals:         0       0       0
+   689 ;;Total ram usage:        0 bytes
+   690 ;; Hardware stack levels used:    1
+   691 ;; Hardware stack levels required when called:    4
+   692 ;; This function calls:
+   693 ;;		_FUN_EnterStandby
+   694 ;;		_LED_SetMode
+   695 ;;		_FUN_EnterWorkMode
+   696 ;;		_MCU_EnterSleep
+   697 ;; This function is called by:
+   698 ;;		_main
+   699 ;; This function uses a non-reentrant model
+   700 ;;
+   701  000B                     _FUN_Driver:	
+   702                           
+   703                           ;FUNCTION.C: 532: if (gFun_workMode == WM_Error) {
+   704                           
+   705                           ; Regs used in _FUN_Driver: [wreg+status,2+status,0+pclath+cstack]
+   706  000B  08F7               	movf	_gFun_workMode,f
+   707  000C  1D03               	skipz
+   708  000D  2814               	goto	l7856
+   709                           
+   710                           ;FUNCTION.C: 533: if (gbLedEnd) {
+   711  000E  1E71               	btfss	_gbLedEnd/(0+8),_gbLedEnd& (0+7)
+   712  000F  2812               	goto	l7854
+   713  0010                     l7852:	
+   714                           
+   715                           ;FUNCTION.C: 534: FUN_EnterStandby();
+   716  0010  2324               	fcall	_FUN_EnterStandby
+   717                           
+   718                           ;FUNCTION.C: 535: } else {
+   719  0011  286D               	goto	l7928
+   720  0012                     l7854:	
+   721                           
+   722                           ;FUNCTION.C: 536: LED_SetMode(LM_RedBlue_1HZ_1T);
+   723  0012  3007               	movlw	7
+   724  0013  286C               	goto	L1
+   725  0014                     l7856:	
+   726  0014  0377               	decf	_gFun_workMode,w
+   727  0015  1D03               	skipz
+   728  0016  284B               	goto	l7898
+   729                           
+   730                           ;FUNCTION.C: 539: LED_SetMode(LM_Off);
+   731  0017  3000               	movlw	0
+   732  0018  21A8               	fcall	_LED_SetMode
+   733                           
+   734                           ;FUNCTION.C: 540: if (gbKeyDouClick) {
+   735  0019  1CF1               	btfss	_gbKeyDouClick/(0+8),_gbKeyDouClick& (0+7)
+   736  001A  282A               	goto	l7872
+   737                           
+   738                           ;FUNCTION.C: 541: if (gIsCupOk) {
+   739  001B  1F70               	btfss	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+   740  001C  2828               	goto	l7870
+   741                           
+   742                           ;FUNCTION.C: 542: if (gFun_adBatVol > ((320)*47ul*512/147/100)) {
+   743  001D  3002               	movlw	2
+   744  001E  0221               	subwf	_gFun_adBatVol+1,w
+   745  001F  300C               	movlw	12
+   746  0020  1903               	skipnz
+   747  0021  0220               	subwf	_gFun_adBatVol,w
+   748  0022  1C03               	skipc
+   749  0023  2826               	goto	l7868
+   750                           
+   751                           ;FUNCTION.C: 543: FUN_EnterWorkMode();
+   752  0024  232B               	fcall	_FUN_EnterWorkMode
+   753                           
+   754                           ;FUNCTION.C: 544: } else {
+   755  0025  282A               	goto	l7872
+   756  0026                     l7868:	
+   757                           
+   758                           ;FUNCTION.C: 545: LED_SetMode(LM_Red_1HZ_10T);
+   759  0026  3005               	movlw	5
+   760  0027  2829               	goto	L2
+   761  0028                     l7870:	
+   762                           
+   763                           ;FUNCTION.C: 548: LED_SetMode(LM_Red_1HZ_3T);
+   764  0028  3003               	movlw	3
+   765  0029                     L2:	
+   766  0029  21A8               	fcall	_LED_SetMode
+   767  002A                     l7872:	
+   768                           
+   769                           ;FUNCTION.C: 549: }
+   770                           ;FUNCTION.C: 550: }
+   771                           ;FUNCTION.C: 551: if (gbCupEvent && gIsCupOk) {
+   772  002A  1BF0               	btfsc	_gbCupEvent/(0+8),_gbCupEvent& (0+7)
+   773  002B  1F70               	btfss	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+   774  002C  282F               	goto	l7878
+   775                           
+   776                           ;FUNCTION.C: 552: LED_SetMode(LM_Blue_1HZ_3T);
+   777  002D  3004               	movlw	4
+   778  002E  21A8               	fcall	_LED_SetMode
+   779  002F                     l7878:	
+   780                           
+   781                           ;FUNCTION.C: 553: }
+   782                           ;FUNCTION.C: 554: if(gbCupEvent && !gIsCupOk){
+   783  002F  1BF0               	btfsc	_gbCupEvent/(0+8),_gbCupEvent& (0+7)
+   784  0030  1B70               	btfsc	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+   785  0031  2834               	goto	l7884
+   786                           
+   787                           ;FUNCTION.C: 555: LED_SetMode(LM_Red_1HZ_3T);
+   788  0032  3003               	movlw	3
+   789  0033  21A8               	fcall	_LED_SetMode
+   790  0034                     l7884:	
+   791                           
+   792                           ;FUNCTION.C: 556: }
+   793                           ;FUNCTION.C: 557: if (gFun_chrState == 0 && gbLedWait==0&&gFun_ledMode==1) {
+   794  0034  08B3               	movf	_gFun_chrState,f
+   795  0035  1903               	btfsc	3,2
+   796  0036  1AF1               	btfsc	_gbLedWait/(0+8),_gbLedWait& (0+7)
+   797  0037  2848               	goto	l7896
+   798  0038  0B39               	decfsz	_gFun_ledMode,w
+   799  0039  2848               	goto	l7896
+   800                           
+   801                           ;FUNCTION.C: 558: if (++gFun_workTimeCnt > 100*15) {
+   802  003A  0AAC               	incf	_gFun_workTimeCnt,f
+   803  003B  1903               	skipnz
+   804  003C  0AAD               	incf	_gFun_workTimeCnt+1,f
+   805  003D  3005               	movlw	5
+   806  003E  022D               	subwf	_gFun_workTimeCnt+1,w
+   807  003F  30DD               	movlw	221
+   808  0040  1903               	skipnz
+   809  0041  022C               	subwf	_gFun_workTimeCnt,w
+   810  0042  1C03               	skipc
+   811  0043  286D               	goto	l7928
+   812                           
+   813                           ;FUNCTION.C: 559: gFun_workTimeCnt = 0;
+   814  0044  01AC               	clrf	_gFun_workTimeCnt
+   815  0045  01AD               	clrf	_gFun_workTimeCnt+1
+   816                           
+   817                           ;FUNCTION.C: 560: MCU_EnterSleep();
+   818  0046  22EC               	fcall	_MCU_EnterSleep
+   819  0047  286D               	goto	l7928
+   820  0048                     l7896:	
+   821                           
+   822                           ;FUNCTION.C: 563: gFun_workTimeCnt = 0;
+   823  0048  01AC               	clrf	_gFun_workTimeCnt
+   824  0049  01AD               	clrf	_gFun_workTimeCnt+1
+   825  004A  286D               	goto	l7928
+   826  004B                     l7898:	
+   827  004B  0877               	movf	_gFun_workMode,w
+   828  004C  3A02               	xorlw	2
+   829  004D  1D03               	skipz
+   830  004E  2859               	goto	l7912
+   831                           
+   832                           ;FUNCTION.C: 566: LED_SetMode(LM_Blue_On);
+   833  004F  3002               	movlw	2
+   834  0050  21A8               	fcall	_LED_SetMode
+   835                           
+   836                           ;FUNCTION.C: 567: if (gbKeyClick) {
+   837  0051  1C71               	btfss	_gbKeyClick/(0+8),_gbKeyClick& (0+7)
+   838  0052  2854               	goto	l7906
+   839                           
+   840                           ;FUNCTION.C: 568: FUN_EnterStandby();
+   841  0053  2324               	fcall	_FUN_EnterStandby
+   842  0054                     l7906:	
+   843                           
+   844                           ;FUNCTION.C: 569: }
+   845                           ;FUNCTION.C: 570: if (gIsCupOk==0) {
+   846  0054  1B70               	btfsc	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+   847  0055  286D               	goto	l7928
+   848                           
+   849                           ;FUNCTION.C: 571: LED_SetMode(LM_Red_1HZ_3T);
+   850  0056  3003               	movlw	3
+   851  0057  21A8               	fcall	_LED_SetMode
+   852  0058  2810               	goto	l7852
+   853  0059                     l7912:	
+   854  0059  0877               	movf	_gFun_workMode,w
+   855  005A  3A03               	xorlw	3
+   856  005B  1D03               	skipz
+   857  005C  285F               	goto	l7916
+   858                           
+   859                           ;FUNCTION.C: 575: LED_SetMode(LM_Off);
+   860  005D  3000               	movlw	0
+   861  005E  286C               	goto	L1
+   862  005F                     l7916:	
+   863                           ;FUNCTION.C: 576: } else if (gFun_workMode == WM_Charge) {
+   864                           
+   865  005F  0877               	movf	_gFun_workMode,w
+   866  0060  3A04               	xorlw	4
+   867  0061  1D03               	skipz
+   868  0062  286D               	goto	l7928
+   869                           
+   870                           ;FUNCTION.C: 577: if (gFun_chrState == CS_Charge){
+   871  0063  0B33               	decfsz	_gFun_chrState,w
+   872  0064  2867               	goto	l7922
+   873                           
+   874                           ;FUNCTION.C: 578: LED_SetMode(LM_Red_On);
+   875  0065  3001               	movlw	1
+   876  0066  286C               	goto	L1
+   877  0067                     l7922:	
+   878                           ;FUNCTION.C: 579: } else if (gFun_chrState == CS_End){
+   879                           
+   880  0067  0833               	movf	_gFun_chrState,w
+   881  0068  3A02               	xorlw	2
+   882  0069  1D03               	skipz
+   883  006A  2810               	goto	l7852
+   884                           
+   885                           ;FUNCTION.C: 580: LED_SetMode(LM_Blue_On);
+   886  006B  3002               	movlw	2
+   887  006C                     L1:	
+   888  006C  21A8               	fcall	_LED_SetMode
+   889  006D                     l7928:	
+   890                           ;FUNCTION.C: 581: } else {
+   891                           
+   892                           
+   893                           ;FUNCTION.C: 583: }
+   894                           ;FUNCTION.C: 584: }
+   895                           ;FUNCTION.C: 585: if (gFun_workMode != WM_Charge) {
+   896  006D  0877               	movf	_gFun_workMode,w
+   897  006E  3A04               	xorlw	4
+   898  006F  1903               	skipnz
+   899  0070  2876               	goto	l1328
+   900                           
+   901                           ;FUNCTION.C: 586: if (gFun_chrState > 0) {
+   902  0071  0833               	movf	_gFun_chrState,w
+   903  0072  1903               	btfsc	3,2
+   904  0073  2876               	goto	l1328
+   905                           
+   906                           ;FUNCTION.C: 587: gFun_workMode = WM_Charge;
+   907  0074  3004               	movlw	4
+   908  0075  00F7               	movwf	_gFun_workMode
+   909  0076                     l1328:	
+   910                           
+   911                           ;FUNCTION.C: 588: }
+   912                           ;FUNCTION.C: 589: }
+   913                           ;FUNCTION.C: 591: if (gFun_workMode == WM_Work) {
+   914  0076  0877               	movf	_gFun_workMode,w
+   915  0077  3A02               	xorlw	2
+   916  0078  1D03               	skipz
+   917  0079  28A2               	goto	l1330
+   918  007A  3064               	movlw	100
+   919                           
+   920                           ;FUNCTION.C: 592: RA4=1;
+   921  007B  1605               	bsf	5,4
+   922                           
+   923                           ;FUNCTION.C: 593: if (++gFun_workTimeCntFor1s >=100) {
+   924  007C  0ABC               	incf	_gFun_workTimeCntFor1s,f
+   925  007D  023C               	subwf	_gFun_workTimeCntFor1s,w
+   926  007E  1C03               	skipc
+   927  007F  2891               	goto	l7948
+   928                           
+   929                           ;FUNCTION.C: 594: gFun_workTimeCntFor1s = 0;
+   930  0080  01BC               	clrf	_gFun_workTimeCntFor1s
+   931                           
+   932                           ;FUNCTION.C: 595: if (gFun_workTimeCnt<65535)
+   933  0081  0A2C               	incf	_gFun_workTimeCnt,w
+   934  0082  1903               	skipnz
+   935  0083  0A2D               	incf	_gFun_workTimeCnt+1,w
+   936  0084  1903               	skipnz
+   937  0085  2889               	goto	l7944
+   938                           
+   939                           ;FUNCTION.C: 596: gFun_workTimeCnt++;
+   940  0086  0AAC               	incf	_gFun_workTimeCnt,f
+   941  0087  1903               	skipnz
+   942  0088  0AAD               	incf	_gFun_workTimeCnt+1,f
+   943  0089                     l7944:	
+   944                           
+   945                           ;FUNCTION.C: 597: if (gFun_workTimeCnt >= 40){
+   946  0089  3000               	movlw	0
+   947  008A  022D               	subwf	_gFun_workTimeCnt+1,w
+   948  008B  3028               	movlw	40
+   949  008C  1903               	skipnz
+   950  008D  022C               	subwf	_gFun_workTimeCnt,w
+   951  008E  1C03               	skipc
+   952  008F  2891               	goto	l7948
+   953                           
+   954                           ;FUNCTION.C: 598: FUN_EnterStandby();
+   955  0090  2324               	fcall	_FUN_EnterStandby
+   956  0091                     l7948:	
+   957                           
+   958                           ;FUNCTION.C: 599: }
+   959                           ;FUNCTION.C: 600: }
+   960                           ;FUNCTION.C: 601: if (gbOcp || gbUcp || gFun_batVolState == 0) {
+   961  0091  1F71               	btfss	_gbOcp/(0+8),_gbOcp& (0+7)
+   962  0092  1BF1               	btfsc	_gbUcp/(0+8),_gbUcp& (0+7)
+   963  0093  2897               	goto	l1336
+   964  0094  08B2               	movf	_gFun_batVolState,f
+   965  0095  1D03               	skipz
+   966  0096  28A3               	goto	l1340
+   967  0097                     l1336:	
+   968                           
+   969                           ;FUNCTION.C: 602: if (gbOcp) {
+   970  0097  1F71               	btfss	_gbOcp/(0+8),_gbOcp& (0+7)
+   971  0098  289B               	goto	l7956
+   972                           
+   973                           ;FUNCTION.C: 603: LED_SetMode(LM_Red_2HZ_10T);
+   974  0099  3006               	movlw	6
+   975  009A  289F               	goto	L3
+   976  009B                     l7956:	
+   977                           ;FUNCTION.C: 604: } else {
+   978                           
+   979                           
+   980                           ;FUNCTION.C: 605: if (gFun_batVolState == 0){
+   981  009B  08B2               	movf	_gFun_batVolState,f
+   982  009C  1D03               	skipz
+   983  009D  28A0               	goto	l7960
+   984                           
+   985                           ;FUNCTION.C: 606: LED_SetMode(LM_Red_1HZ_10T);
+   986  009E  3005               	movlw	5
+   987  009F                     L3:	
+   988  009F  21A8               	fcall	_LED_SetMode
+   989  00A0                     l7960:	
+   990                           
+   991                           ;FUNCTION.C: 607: }
+   992                           ;FUNCTION.C: 608: }
+   993                           ;FUNCTION.C: 609: FUN_EnterStandby();
+   994  00A0  2324               	fcall	_FUN_EnterStandby
+   995  00A1  28A3               	goto	l1340
+   996  00A2                     l1330:	
+   997                           
+   998                           ;FUNCTION.C: 613: RA4=0;
+   999  00A2  1205               	bcf	5,4
+  1000  00A3                     l1340:	
+  1001                           
+  1002                           ;FUNCTION.C: 614: }
+  1003                           ;FUNCTION.C: 616: gbLedEnd = 0;
+  1004  00A3  1271               	bcf	_gbLedEnd/(0+8),_gbLedEnd& (0+7)
+  1005                           
+  1006                           ;FUNCTION.C: 617: gbCupEvent = 0;
+  1007  00A4  13F0               	bcf	_gbCupEvent/(0+8),_gbCupEvent& (0+7)
+  1008                           
+  1009                           ;FUNCTION.C: 618: gbKeyClick = 0;
+  1010  00A5  1071               	bcf	_gbKeyClick/(0+8),_gbKeyClick& (0+7)
+  1011                           
+  1012                           ;FUNCTION.C: 619: gbKeyDouClick = 0;
+  1013  00A6  10F1               	bcf	_gbKeyDouClick/(0+8),_gbKeyDouClick& (0+7)
+  1014  00A7  0008               	return
+  1015  00A8                     __end_of_FUN_Driver:	
+  1016                           
+  1017                           	psect	text602
+  1018  01E3                     __ptext602:	
+  1019 ;; =============== function _FUN_Driver ends ============
+  1020                           
+  1021                           
+  1022 ;; *************** function _ADC_Driver *****************
+  1023 ;; Defined at:
+  1024 ;;		line 271 in file "FUNCTION.C"
+  1025 ;; Parameters:    Size  Location     Type
+  1026 ;;		None
+  1027 ;; Auto vars:     Size  Location     Type
+  1028 ;;		None
+  1029 ;; Return value:  Size  Location     Type
+  1030 ;;		None               void
+  1031 ;; Registers used:
+  1032 ;;		wreg, status,2, status,0, pclath, cstack
+  1033 ;; Tracked objects:
+  1034 ;;		On entry : 60/0
+  1035 ;;		On exit  : 60/0
+  1036 ;;		Unchanged: 0/0
+  1037 ;; Data sizes:     COMMON   BANK0   BANK1
+  1038 ;;      Params:         0       0       0
+  1039 ;;      Locals:         0       0       0
+  1040 ;;      Temps:          0       0       0
+  1041 ;;      Totals:         0       0       0
+  1042 ;;Total ram usage:        0 bytes
+  1043 ;; Hardware stack levels used:    1
+  1044 ;; Hardware stack levels required when called:    3
+  1045 ;; This function calls:
+  1046 ;;		_GetAd
+  1047 ;; This function is called by:
+  1048 ;;		_main
+  1049 ;; This function uses a non-reentrant model
+  1050 ;;
+  1051  01E3                     _ADC_Driver:	
+  1052                           
+  1053                           ;FUNCTION.C: 272: if (gFun_adcChIndex == 0) {
+  1054                           
+  1055                           ; Regs used in _ADC_Driver: [wreg+status,2+status,0+pclath+cstack]
+  1056  01E3  08AF               	movf	_gFun_adcChIndex,f
+  1057  01E4  1D03               	skipz
+  1058  01E5  29E8               	goto	l7824
+  1059                           
+  1060                           ;FUNCTION.C: 273: gFun_adcBuffer = GetAd(4);
+  1061  01E6  3004               	movlw	4
+  1062  01E7  29E9               	goto	L4
+  1063  01E8                     l7824:	
+  1064                           ;FUNCTION.C: 274: } else {
+  1065                           
+  1066                           
+  1067                           ;FUNCTION.C: 275: gFun_adcBuffer = GetAd(5);
+  1068  01E8  3005               	movlw	5
+  1069  01E9                     L4:	
+  1070  01E9  2246               	fcall	_GetAd
+  1071  01EA  0876               	movf	?_GetAd+1,w
+  1072  01EB  00A5               	movwf	_gFun_adcBuffer+1
+  1073  01EC  0875               	movf	?_GetAd,w
+  1074  01ED  00A4               	movwf	_gFun_adcBuffer
+  1075                           
+  1076                           ;FUNCTION.C: 276: }
+  1077                           ;FUNCTION.C: 277: gFun_adcBufferSum += gFun_adcBuffer;
+  1078  01EE  07A6               	addwf	_gFun_adcBufferSum,f
+  1079  01EF  1803               	skipnc
+  1080  01F0  0AA7               	incf	_gFun_adcBufferSum+1,f
+  1081  01F1  0825               	movf	_gFun_adcBuffer+1,w
+  1082  01F2  07A7               	addwf	_gFun_adcBufferSum+1,f
+  1083                           
+  1084                           ;FUNCTION.C: 278: if (++gFun_adcIndex >= 64) {
+  1085  01F3  3040               	movlw	64
+  1086  01F4  0AB1               	incf	_gFun_adcIndex,f
+  1087  01F5  0231               	subwf	_gFun_adcIndex,w
+  1088  01F6  1C03               	skipc
+  1089  01F7  0008               	return
+  1090                           
+  1091                           ;FUNCTION.C: 279: gFun_adcIndex = 0;
+  1092  01F8  01B1               	clrf	_gFun_adcIndex
+  1093                           
+  1094                           ;FUNCTION.C: 280: gFun_adcBuffer = gFun_adcBufferSum>>6;
+  1095  01F9  0827               	movf	_gFun_adcBufferSum+1,w
+  1096  01FA  00A5               	movwf	_gFun_adcBuffer+1
+  1097  01FB  0826               	movf	_gFun_adcBufferSum,w
+  1098  01FC  00A4               	movwf	_gFun_adcBuffer
+  1099  01FD  3006               	movlw	6
+  1100  01FE                     u2275:	
+  1101  01FE  1003               	clrc
+  1102  01FF  0CA5               	rrf	_gFun_adcBuffer+1,f
+  1103  0200  0CA4               	rrf	_gFun_adcBuffer,f
+  1104  0201  3EFF               	addlw	-1
+  1105  0202  1D03               	skipz
+  1106  0203  29FE               	goto	u2275
+  1107                           
+  1108                           ;FUNCTION.C: 281: if (gFun_adcChIndex == 0) {
+  1109  0204  08AF               	movf	_gFun_adcChIndex,f
+  1110  0205  1D03               	skipz
+  1111  0206  2A0E               	goto	l7842
+  1112                           
+  1113                           ;FUNCTION.C: 282: gFun_adcChIndex = 1;
+  1114  0207  01AF               	clrf	_gFun_adcChIndex
+  1115  0208  0AAF               	incf	_gFun_adcChIndex,f
+  1116                           
+  1117                           ;FUNCTION.C: 283: gFun_adCurrent = gFun_adcBuffer;
+  1118  0209  0825               	movf	_gFun_adcBuffer+1,w
+  1119  020A  00A3               	movwf	_gFun_adCurrent+1
+  1120  020B  0824               	movf	_gFun_adcBuffer,w
+  1121  020C  00A2               	movwf	_gFun_adCurrent
+  1122                           
+  1123                           ;FUNCTION.C: 284: } else {
+  1124  020D  2A13               	goto	l7846
+  1125  020E                     l7842:	
+  1126                           
+  1127                           ;FUNCTION.C: 285: gFun_adcChIndex = 0;
+  1128  020E  01AF               	clrf	_gFun_adcChIndex
+  1129                           
+  1130                           ;FUNCTION.C: 286: gFun_adBatVol = gFun_adcBuffer;
+  1131  020F  0825               	movf	_gFun_adcBuffer+1,w
+  1132  0210  00A1               	movwf	_gFun_adBatVol+1
+  1133  0211  0824               	movf	_gFun_adcBuffer,w
+  1134  0212  00A0               	movwf	_gFun_adBatVol
+  1135  0213                     l7846:	
+  1136                           
+  1137                           ;FUNCTION.C: 287: }
+  1138                           ;FUNCTION.C: 288: gFun_adcBufferSum = 0;
+  1139  0213  01A6               	clrf	_gFun_adcBufferSum
+  1140  0214  01A7               	clrf	_gFun_adcBufferSum+1
+  1141  0215  0008               	return
+  1142  0216                     __end_of_ADC_Driver:	
+  1143                           
+  1144                           	psect	text603
+  1145  02EC                     __ptext603:	
+  1146 ;; =============== function _ADC_Driver ends ============
+  1147                           
+  1148                           
+  1149 ;; *************** function _MCU_EnterSleep *****************
+  1150 ;; Defined at:
+  1151 ;;		line 151 in file "FUNCTION.C"
+  1152 ;; Parameters:    Size  Location     Type
+  1153 ;;		None
+  1154 ;; Auto vars:     Size  Location     Type
+  1155 ;;		None
+  1156 ;; Return value:  Size  Location     Type
+  1157 ;;		None               void
+  1158 ;; Registers used:
+  1159 ;;		wreg, status,2, status,0, pclath, cstack
+  1160 ;; Tracked objects:
+  1161 ;;		On entry : 60/0
+  1162 ;;		On exit  : 60/0
+  1163 ;;		Unchanged: 0/0
+  1164 ;; Data sizes:     COMMON   BANK0   BANK1
+  1165 ;;      Params:         0       0       0
+  1166 ;;      Locals:         0       0       0
+  1167 ;;      Temps:          0       0       0
+  1168 ;;      Totals:         0       0       0
+  1169 ;;Total ram usage:        0 bytes
+  1170 ;; Hardware stack levels used:    1
+  1171 ;; Hardware stack levels required when called:    3
+  1172 ;; This function calls:
+  1173 ;;		_MCU_SleepConfig
+  1174 ;;		_DelayUs
+  1175 ;; This function is called by:
+  1176 ;;		_FUN_Driver
+  1177 ;; This function uses a non-reentrant model
+  1178 ;;
+  1179  02EC                     _MCU_EnterSleep:	
+  1180                           
+  1181                           ;FUNCTION.C: 152: MCU_SleepConfig(1);
+  1182                           
+  1183                           ; Regs used in _MCU_EnterSleep: [wreg+status,2+status,0+pclath+cstack]
+  1184  02EC  3001               	movlw	1
+  1185  02ED  2271               	fcall	_MCU_SleepConfig
+  1186  02EE  0063               	sleep	;#
+  1187                           
+  1188                           ;FUNCTION.C: 154: DelayUs(1000);
+  1189  02EF  30E8               	movlw	232
+  1190  02F0  2314               	fcall	_DelayUs
+  1191                           
+  1192                           ;FUNCTION.C: 155: MCU_SleepConfig(0);
+  1193  02F1  3000               	movlw	0
+  1194  02F2  2271               	fcall	_MCU_SleepConfig
+  1195                           
+  1196                           ;FUNCTION.C: 156: gFun_keyIdleCnt = 255;
+  1197  02F3  30FF               	movlw	255
+  1198  02F4  1283               	bcf	3,5	;RP0=0, select bank0
+  1199  02F5  1303               	bcf	3,6	;RP1=0, select bank0
+  1200  02F6  00C4               	movwf	_gFun_keyIdleCnt
+  1201  02F7  0008               	return
+  1202  02F8                     __end_of_MCU_EnterSleep:	
+  1203                           
+  1204                           	psect	text604
+  1205  0271                     __ptext604:	
+  1206 ;; =============== function _MCU_EnterSleep ends ============
+  1207                           
+  1208                           
+  1209 ;; *************** function _MCU_SleepConfig *****************
+  1210 ;; Defined at:
+  1211 ;;		line 163 in file "FUNCTION.C"
+  1212 ;; Parameters:    Size  Location     Type
+  1213 ;;  isSleep         1    wreg     unsigned char 
+  1214 ;; Auto vars:     Size  Location     Type
+  1215 ;;  isSleep         1    3[COMMON] unsigned char 
+  1216 ;; Return value:  Size  Location     Type
+  1217 ;;		None               void
+  1218 ;; Registers used:
+  1219 ;;		wreg, status,2, status,0, pclath, cstack
+  1220 ;; Tracked objects:
+  1221 ;;		On entry : 0/0
+  1222 ;;		On exit  : 0/0
+  1223 ;;		Unchanged: 0/0
+  1224 ;; Data sizes:     COMMON   BANK0   BANK1
+  1225 ;;      Params:         0       0       0
+  1226 ;;      Locals:         1       0       0
+  1227 ;;      Temps:          0       0       0
+  1228 ;;      Totals:         1       0       0
+  1229 ;;Total ram usage:        1 bytes
+  1230 ;; Hardware stack levels used:    1
+  1231 ;; Hardware stack levels required when called:    2
+  1232 ;; This function calls:
+  1233 ;;		_DelayUs
+  1234 ;; This function is called by:
+  1235 ;;		_MCU_EnterSleep
+  1236 ;; This function uses a non-reentrant model
+  1237 ;;
+  1238  0271                     _MCU_SleepConfig:	
+  1239                           
+  1240                           ; Regs used in _MCU_SleepConfig: [wreg+status,2+status,0+pclath+cstack]
+  1241                           ;MCU_SleepConfig@isSleep stored from wreg
+  1242  0271  00F5               	movwf	MCU_SleepConfig@isSleep
+  1243                           
+  1244                           ;FUNCTION.C: 177: if (isSleep){
+  1245  0272  0875               	movf	MCU_SleepConfig@isSleep,w
+  1246                           
+  1247                           ;FUNCTION.C: 178: ADON = 0;
+  1248  0273  1283               	bcf	3,5	;RP0=0, select bank0
+  1249  0274  1303               	bcf	3,6	;RP1=0, select bank0
+  1250  0275  1903               	btfsc	3,2
+  1251  0276  2A88               	goto	L5
+  1252  0277  30CF               	movlw	207
+  1253  0278  101F               	bcf	31,0
+  1254                           
+  1255                           ;FUNCTION.C: 179: IOCA = 0B11001111;
+  1256  0279  1683               	bsf	3,5	;RP0=1, select bank1
+  1257  027A  0096               	movwf	22	;volatile
+  1258                           
+  1259                           ;FUNCTION.C: 181: PORTA = 0B11001111;
+  1260                           
+  1261                           ;FUNCTION.C: 182: TRISA = 0B11001111;
+  1262                           
+  1263                           ;FUNCTION.C: 183: WPUA = 0B11001000;
+  1264  027B  22C9               	fcall	PL2	;call to abstracted procedure
+  1265                           
+  1266                           ;FUNCTION.C: 185: PORTC = 0B00010011;
+  1267  027C  3013               	movlw	19
+  1268  027D  1283               	bcf	3,5	;RP0=0, select bank0
+  1269  027E  0087               	movwf	7	;volatile
+  1270                           
+  1271                           ;FUNCTION.C: 186: TRISC = 0B00000011;
+  1272  027F  3003               	movlw	3
+  1273  0280  1683               	bsf	3,5	;RP0=1, select bank1
+  1274  0281  0087               	movwf	7	;volatile
+  1275                           
+  1276                           ;FUNCTION.C: 187: WPUC = 0B00000000;
+  1277  0282  0188               	clrf	8	;volatile
+  1278                           
+  1279                           ;FUNCTION.C: 189: DelayUs(1000);
+  1280  0283  30E8               	movlw	232
+  1281  0284  2314               	fcall	_DelayUs
+  1282                           
+  1283                           ;FUNCTION.C: 190: PAIE = 1;
+  1284  0285  158B               	bsf	11,3
+  1285                           
+  1286                           ;FUNCTION.C: 191: PAIF = 0;
+  1287  0286  100B               	bcf	11,0
+  1288                           
+  1289                           ;FUNCTION.C: 192: } else {
+  1290  0287  0008               	return
+  1291  0288                     L5:	
+  1292                           ;FUNCTION.C: 193: ADON = 1;
+  1293                           
+  1294  0288  141F               	bsf	31,0
+  1295                           
+  1296                           ;FUNCTION.C: 194: PAIE = 0;
+  1297  0289  118B               	bcf	11,3
+  1298                           
+  1299                           ;FUNCTION.C: 195: PAIF = 0;
+  1300  028A  100B               	bcf	11,0
+  1301                           
+  1302                           ;FUNCTION.C: 196: IOCA = 0B00000000;
+  1303  028B  1683               	bsf	3,5	;RP0=1, select bank1
+  1304  028C  0196               	clrf	22	;volatile
+  1305                           
+  1306                           ;FUNCTION.C: 198: PORTA = 0B11001111;
+  1307  028D  30CF               	movlw	207
+  1308                           
+  1309                           ;FUNCTION.C: 199: TRISA = 0B11001111;
+  1310                           
+  1311                           ;FUNCTION.C: 200: WPUA = 0B11001000;
+  1312  028E  22C9               	fcall	PL2	;call to abstracted procedure
+  1313                           
+  1314                           ;FUNCTION.C: 202: PORTC = 0B00000011;
+  1315  028F  3003               	movlw	3
+  1316  0290  1283               	bcf	3,5	;RP0=0, select bank0
+  1317  0291  0087               	movwf	7	;volatile
+  1318                           
+  1319                           ;FUNCTION.C: 203: TRISC = 0B00000011;
+  1320  0292  1683               	bsf	3,5	;RP0=1, select bank1
+  1321  0293  0087               	movwf	7	;volatile
+  1322                           
+  1323                           ;FUNCTION.C: 204: WPUC = 0B00000000;
+  1324  0294  0188               	clrf	8	;volatile
+  1325  0295  0008               	return
+  1326  0296                     __end_of_MCU_SleepConfig:	
+  1327                           
+  1328                           	psect	text605
+  1329  0246                     __ptext605:	
+  1330 ;; =============== function _MCU_SleepConfig ends ============
+  1331                           
+  1332                           
+  1333 ;; *************** function _GetAd *****************
+  1334 ;; Defined at:
+  1335 ;;		line 122 in file "FUNCTION.C"
+  1336 ;; Parameters:    Size  Location     Type
+  1337 ;;  ch              1    wreg     unsigned char 
+  1338 ;; Auto vars:     Size  Location     Type
+  1339 ;;  ch              1    0[BANK0 ] unsigned char 
+  1340 ;;  ADC_DATA        2    4[BANK0 ] unsigned short 
+  1341 ;;  tBuffer         2    1[BANK0 ] unsigned short 
+  1342 ;;  ADCON0Buff      1    3[BANK0 ] unsigned char 
+  1343 ;;  i               1    0        unsigned char 
+  1344 ;; Return value:  Size  Location     Type
+  1345 ;;                  2    3[COMMON] unsigned short 
+  1346 ;; Registers used:
+  1347 ;;		wreg, status,2, status,0, pclath, cstack
+  1348 ;; Tracked objects:
+  1349 ;;		On entry : 60/0
+  1350 ;;		On exit  : 60/0
+  1351 ;;		Unchanged: 0/0
+  1352 ;; Data sizes:     COMMON   BANK0   BANK1
+  1353 ;;      Params:         2       0       0
+  1354 ;;      Locals:         0       6       0
+  1355 ;;      Temps:          0       0       0
+  1356 ;;      Totals:         2       6       0
+  1357 ;;Total ram usage:        8 bytes
+  1358 ;; Hardware stack levels used:    1
+  1359 ;; Hardware stack levels required when called:    2
+  1360 ;; This function calls:
+  1361 ;;		_DelayUs
+  1362 ;; This function is called by:
+  1363 ;;		_ADC_Driver
+  1364 ;; This function uses a non-reentrant model
+  1365 ;;
+  1366  0246                     _GetAd:	
+  1367                           
+  1368                           ; Regs used in _GetAd: [wreg+status,2+status,0+pclath+cstack]
+  1369                           ;GetAd@ch stored from wreg
+  1370  0246  00BE               	movwf	GetAd@ch
+  1371                           
+  1372                           ;FUNCTION.C: 126: u16 ADC_DATA=0;
+  1373  0247  01C2               	clrf	GetAd@ADC_DATA
+  1374  0248  01C3               	clrf	GetAd@ADC_DATA+1
+  1375                           
+  1376                           ;FUNCTION.C: 128: ADCON0Buff = ADCON0 & 0B10100011;
+  1377  0249  081F               	movf	31,w
+  1378  024A  00C1               	movwf	GetAd@ADCON0Buff
+  1379  024B  30A3               	movlw	163
+  1380  024C  05C1               	andwf	GetAd@ADCON0Buff,f
+  1381                           
+  1382                           ;FUNCTION.C: 129: ch <<=2;
+  1383  024D  1003               	clrc
+  1384  024E  0DBE               	rlf	GetAd@ch,f
+  1385  024F  1003               	clrc
+  1386  0250  0DBE               	rlf	GetAd@ch,f
+  1387                           
+  1388                           ;FUNCTION.C: 130: ADCON0Buff |= ch;
+  1389  0251  083E               	movf	GetAd@ch,w
+  1390  0252  04C1               	iorwf	GetAd@ADCON0Buff,f
+  1391                           
+  1392                           ;FUNCTION.C: 131: ADCON0 = ADCON0Buff;
+  1393  0253  0841               	movf	GetAd@ADCON0Buff,w
+  1394  0254  009F               	movwf	31	;volatile
+  1395                           
+  1396                           ;FUNCTION.C: 132: DelayUs(20);
+  1397  0255  3014               	movlw	20
+  1398  0256  2314               	fcall	_DelayUs
+  1399                           
+  1400                           ;FUNCTION.C: 134: GO_DONE = 1;
+  1401  0257  1283               	bcf	3,5	;RP0=0, select bank0
+  1402  0258  1303               	bcf	3,6	;RP1=0, select bank0
+  1403  0259  149F               	bsf	31,1
+  1404  025A                     l1179:	
+  1405                           ;FUNCTION.C: 135: while( GO_DONE==1 );
+  1406                           
+  1407  025A  189F               	btfsc	31,1
+  1408  025B  2A5A               	goto	l1179
+  1409                           
+  1410                           ;FUNCTION.C: 137: GO_DONE = 1;
+  1411  025C  149F               	bsf	31,1
+  1412  025D                     l1182:	
+  1413                           ;FUNCTION.C: 138: while( GO_DONE==1 );
+  1414                           
+  1415  025D  189F               	btfsc	31,1
+  1416  025E  2A5D               	goto	l1182
+  1417                           
+  1418                           ;FUNCTION.C: 140: ADC_DATA = ADRESH;
+  1419  025F  081E               	movf	30,w	;volatile
+  1420  0260  00C2               	movwf	GetAd@ADC_DATA
+  1421  0261  01C3               	clrf	GetAd@ADC_DATA+1
+  1422                           
+  1423                           ;FUNCTION.C: 141: ADC_DATA <<=8;
+  1424  0262  00C3               	movwf	GetAd@ADC_DATA+1
+  1425  0263  01C2               	clrf	GetAd@ADC_DATA
+  1426                           
+  1427                           ;FUNCTION.C: 142: ADC_DATA |= ADRESL;
+  1428  0264  1683               	bsf	3,5	;RP0=1, select bank1
+  1429  0265  081E               	movf	30,w	;volatile
+  1430  0266  1283               	bcf	3,5	;RP0=0, select bank0
+  1431  0267  04C2               	iorwf	GetAd@ADC_DATA,f
+  1432                           
+  1433                           ;FUNCTION.C: 143: tBuffer = ADC_DATA;
+  1434  0268  0843               	movf	GetAd@ADC_DATA+1,w
+  1435  0269  00C0               	movwf	GetAd@tBuffer+1
+  1436  026A  0842               	movf	GetAd@ADC_DATA,w
+  1437  026B  00BF               	movwf	GetAd@tBuffer
+  1438                           
+  1439                           ;FUNCTION.C: 144: return tBuffer;
+  1440  026C  0840               	movf	GetAd@tBuffer+1,w
+  1441  026D  00F6               	movwf	?_GetAd+1
+  1442  026E  083F               	movf	GetAd@tBuffer,w
+  1443  026F  00F5               	movwf	?_GetAd
+  1444  0270  0008               	return
+  1445  0271                     __end_of_GetAd:	
+  1446                           
+  1447                           	psect	text606
+  1448  0216                     __ptext606:	
+  1449 ;; =============== function _GetAd ends ============
+  1450                           
+  1451                           
+  1452 ;; *************** function _CUP_CHR_Driver *****************
+  1453 ;; Defined at:
+  1454 ;;		line 77 in file "FUNCTION.C"
+  1455 ;; Parameters:    Size  Location     Type
+  1456 ;;		None
+  1457 ;; Auto vars:     Size  Location     Type
+  1458 ;;  cupchrStateC    1    3[COMMON] unsigned char 
+  1459 ;; Return value:  Size  Location     Type
+  1460 ;;		None               void
+  1461 ;; Registers used:
+  1462 ;;		wreg, status,2, status,0, pclath, cstack
+  1463 ;; Tracked objects:
+  1464 ;;		On entry : 0/0
+  1465 ;;		On exit  : 60/0
+  1466 ;;		Unchanged: 0/0
+  1467 ;; Data sizes:     COMMON   BANK0   BANK1
+  1468 ;;      Params:         0       0       0
+  1469 ;;      Locals:         1       0       0
+  1470 ;;      Temps:          0       0       0
+  1471 ;;      Totals:         1       0       0
+  1472 ;;Total ram usage:        1 bytes
+  1473 ;; Hardware stack levels used:    1
+  1474 ;; Hardware stack levels required when called:    2
+  1475 ;; This function calls:
+  1476 ;;		_DelayUs
+  1477 ;; This function is called by:
+  1478 ;;		_main
+  1479 ;; This function uses a non-reentrant model
+  1480 ;;
+  1481  0216                     _CUP_CHR_Driver:	
+  1482                           
+  1483                           ;FUNCTION.C: 78: u8 cupchrStateCode = 0;
+  1484                           
+  1485                           ; Regs used in _CUP_CHR_Driver: [wreg+status,2+status,0+pclath+cstack]
+  1486  0216  01F5               	clrf	CUP_CHR_Driver@cupchrStateCode
+  1487                           
+  1488                           ;FUNCTION.C: 81: if ((RA0==0)) cupchrStateCode|=(1<<0);
+  1489  0217  1283               	bcf	3,5	;RP0=0, select bank0
+  1490  0218  1303               	bcf	3,6	;RP1=0, select bank0
+  1491  0219  1C05               	btfss	5,0
+  1492  021A  1475               	bsf	CUP_CHR_Driver@cupchrStateCode,0
+  1493                           
+  1494                           ;FUNCTION.C: 82: if ((RA1==0)) cupchrStateCode|=(1<<1);
+  1495  021B  1C85               	btfss	5,1
+  1496  021C  14F5               	bsf	CUP_CHR_Driver@cupchrStateCode,1
+  1497                           
+  1498                           ;FUNCTION.C: 84: if (cupchrStateCode == 0x03) {
+  1499  021D  0875               	movf	CUP_CHR_Driver@cupchrStateCode,w
+  1500  021E  3A03               	xorlw	3
+  1501  021F  1903               	btfsc	3,2
+  1502                           
+  1503                           ;FUNCTION.C: 85: cupchrStateCode = 0;
+  1504  0220  01F5               	clrf	CUP_CHR_Driver@cupchrStateCode
+  1505                           
+  1506                           ;FUNCTION.C: 86: }
+  1507                           ;FUNCTION.C: 88: if ((RA2==0)) cupchrStateCode|=(1<<2);
+  1508  0221  1D05               	btfss	5,2
+  1509  0222  1575               	bsf	CUP_CHR_Driver@cupchrStateCode,2
+  1510                           
+  1511                           ;FUNCTION.C: 90: if (cupchrStateCode != gFun_cupchrCodeBuff) {
+  1512  0223  0875               	movf	CUP_CHR_Driver@cupchrStateCode,w
+  1513  0224  0634               	xorwf	_gFun_cupchrCodeBuff,w
+  1514  0225  1903               	skipnz
+  1515  0226  2A2B               	goto	l7748
+  1516                           
+  1517                           ;FUNCTION.C: 91: gFun_cupchrTimeCnt = 0;
+  1518  0227  01B5               	clrf	_gFun_cupchrTimeCnt
+  1519                           
+  1520                           ;FUNCTION.C: 92: gFun_cupchrCodeBuff = cupchrStateCode;
+  1521  0228  0875               	movf	CUP_CHR_Driver@cupchrStateCode,w
+  1522  0229  00B4               	movwf	_gFun_cupchrCodeBuff
+  1523                           
+  1524                           ;FUNCTION.C: 93: } else {
+  1525  022A  0008               	return
+  1526  022B                     l7748:	
+  1527                           
+  1528                           ;FUNCTION.C: 94: if (gFun_cupchrTimeCnt < 10) {
+  1529  022B  300A               	movlw	10
+  1530  022C  0235               	subwf	_gFun_cupchrTimeCnt,w
+  1531  022D  1803               	skipnc
+  1532  022E  2A31               	goto	l1169
+  1533                           
+  1534                           ;FUNCTION.C: 95: gFun_cupchrTimeCnt++;
+  1535  022F  0AB5               	incf	_gFun_cupchrTimeCnt,f
+  1536                           
+  1537                           ;FUNCTION.C: 96: } else {
+  1538  0230  0008               	return
+  1539  0231                     l1169:	
+  1540                           
+  1541                           ;FUNCTION.C: 97: if (gFun_cupchrCodeBuff &(1<<2)) {
+  1542  0231  1D34               	btfss	_gFun_cupchrCodeBuff,2
+  1543  0232  2A3B               	goto	l1171
+  1544                           
+  1545                           ;FUNCTION.C: 98: if (gIsCupOk==0) {
+  1546  0233  1B70               	btfsc	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+  1547  0234  2A3F               	goto	l7762
+  1548                           
+  1549                           ;FUNCTION.C: 99: DelayUs(10000);
+  1550  0235  3010               	movlw	16
+  1551  0236  2314               	fcall	_DelayUs
+  1552                           
+  1553                           ;FUNCTION.C: 100: if (gIsCupOk==0) {
+  1554  0237  1B70               	btfsc	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+  1555  0238  2A3F               	goto	l7762
+  1556                           
+  1557                           ;FUNCTION.C: 101: gIsCupOk = 1;
+  1558  0239  1770               	bsf	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+  1559  023A  2A3E               	goto	L6
+  1560  023B                     l1171:	
+  1561                           ;FUNCTION.C: 102: gbCupEvent = 1;
+  1562                           
+  1563                           
+  1564                           ;FUNCTION.C: 106: if (gIsCupOk) {
+  1565  023B  1F70               	btfss	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+  1566  023C  2A3F               	goto	l7762
+  1567                           
+  1568                           ;FUNCTION.C: 107: gIsCupOk = 0;
+  1569  023D  1370               	bcf	_gIsCupOk/(0+8),_gIsCupOk& (0+7)
+  1570  023E                     L6:	
+  1571                           
+  1572                           ;FUNCTION.C: 108: gbCupEvent = 1;
+  1573  023E  17F0               	bsf	_gbCupEvent/(0+8),_gbCupEvent& (0+7)
+  1574  023F                     l7762:	
+  1575                           
+  1576                           ;FUNCTION.C: 109: }
+  1577                           ;FUNCTION.C: 110: }
+  1578                           ;FUNCTION.C: 111: gFun_chrState = gFun_cupchrCodeBuff &0x03;
+  1579  023F  1283               	bcf	3,5	;RP0=0, select bank0
+  1580  0240  1303               	bcf	3,6	;RP1=0, select bank0
+  1581  0241  0834               	movf	_gFun_cupchrCodeBuff,w
+  1582  0242  00B3               	movwf	_gFun_chrState
+  1583  0243  3003               	movlw	3
+  1584  0244  05B3               	andwf	_gFun_chrState,f
+  1585  0245  0008               	return
+  1586  0246                     __end_of_CUP_CHR_Driver:	
+  1587                           
+  1588                           	psect	text607
+  1589  0335                     __ptext607:	
+  1590 ;; =============== function _CUP_CHR_Driver ends ============
+  1591                           
+  1592                           
+  1593 ;; *************** function _MCU_Init *****************
+  1594 ;; Defined at:
+  1595 ;;		line 74 in file "MCU.C"
+  1596 ;; Parameters:    Size  Location     Type
+  1597 ;;		None
+  1598 ;; Auto vars:     Size  Location     Type
+  1599 ;;		None
+  1600 ;; Return value:  Size  Location     Type
+  1601 ;;		None               void
+  1602 ;; Registers used:
+  1603 ;;		wreg, status,2, status,0, pclath, cstack
+  1604 ;; Tracked objects:
+  1605 ;;		On entry : 17F/0
+  1606 ;;		On exit  : 17F/20
+  1607 ;;		Unchanged: FFE80/0
+  1608 ;; Data sizes:     COMMON   BANK0   BANK1
+  1609 ;;      Params:         0       0       0
+  1610 ;;      Locals:         0       0       0
+  1611 ;;      Temps:          0       0       0
+  1612 ;;      Totals:         0       0       0
+  1613 ;;Total ram usage:        0 bytes
+  1614 ;; Hardware stack levels used:    1
+  1615 ;; Hardware stack levels required when called:    2
+  1616 ;; This function calls:
+  1617 ;;		_CLK_Init
+  1618 ;;		_TIM_Init
+  1619 ;;		_ADC_Init
+  1620 ;; This function is called by:
+  1621 ;;		_main
+  1622 ;; This function uses a non-reentrant model
+  1623 ;;
+  1624  0335                     _MCU_Init:	
+  1625                           
+  1626                           ;MCU.C: 75: CLK_Init();
+  1627                           
+  1628                           ; Regs used in _MCU_Init: [wreg+status,2+status,0+pclath+cstack]
+  1629  0335  22B5               	fcall	_CLK_Init
+  1630                           
+  1631                           ;MCU.C: 76: TIM_Init();
+  1632  0336  22DE               	fcall	_TIM_Init
+  1633                           
+  1634                           ;MCU.C: 77: ADC_Init();
+  1635  0337  2B02               	ljmp	l6914
+  1636  0338                     __end_of_MCU_Init:	
+  1637                           
+  1638                           	psect	text608
+  1639  0314                     __ptext608:	
+  1640 ;; =============== function _MCU_Init ends ============
+  1641                           
+  1642                           
+  1643 ;; *************** function _DelayUs *****************
+  1644 ;; Defined at:
+  1645 ;;		line 67 in file "FUNCTION.C"
+  1646 ;; Parameters:    Size  Location     Type
+  1647 ;;  time            1    wreg     unsigned char 
+  1648 ;; Auto vars:     Size  Location     Type
+  1649 ;;  time            1    2[COMMON] unsigned char 
+  1650 ;; Return value:  Size  Location     Type
+  1651 ;;		None               void
+  1652 ;; Registers used:
+  1653 ;;		wreg, status,2, status,0
+  1654 ;; Tracked objects:
+  1655 ;;		On entry : 0/0
+  1656 ;;		On exit  : 0/0
+  1657 ;;		Unchanged: 0/0
+  1658 ;; Data sizes:     COMMON   BANK0   BANK1
+  1659 ;;      Params:         0       0       0
+  1660 ;;      Locals:         1       0       0
+  1661 ;;      Temps:          0       0       0
+  1662 ;;      Totals:         1       0       0
+  1663 ;;Total ram usage:        1 bytes
+  1664 ;; Hardware stack levels used:    1
+  1665 ;; Hardware stack levels required when called:    1
+  1666 ;; This function calls:
+  1667 ;;		Nothing
+  1668 ;; This function is called by:
+  1669 ;;		_CUP_CHR_Driver
+  1670 ;;		_GetAd
+  1671 ;;		_MCU_EnterSleep
+  1672 ;;		_MCU_SleepConfig
+  1673 ;; This function uses a non-reentrant model
+  1674 ;;
+  1675  0314                     _DelayUs:	
+  1676                           
+  1677                           ; Regs used in _DelayUs: [wreg+status,2+status,0]
+  1678                           ;DelayUs@time stored from wreg
+  1679  0314  00F4               	movwf	DelayUs@time
+  1680  0315                     l7724:	
+  1681                           ;FUNCTION.C: 68: while(time--)
+  1682                           
+  1683  0315  03F4               	decf	DelayUs@time,f
+  1684  0316  0874               	movf	DelayUs@time,w
+  1685  0317  3AFF               	xorlw	255
+  1686  0318  1903               	btfsc	3,2
+  1687  0319  0008               	return
+  1688                           
+  1689                           ;FUNCTION.C: 69: {
+  1690                           ;FUNCTION.C: 70: _nop();
+  1691  031A  0000               	nop
+  1692  031B  2B15               	goto	l7724
+  1693  031C                     __end_of_DelayUs:	
+  1694                           
+  1695                           	psect	text609
+  1696  0302                     __ptext609:	
+  1697 ;; =============== function _DelayUs ends ============
+  1698                           
+  1699                           
+  1700 ;; *************** function _ADC_Init *****************
+  1701 ;; Defined at:
+  1702 ;;		line 53 in file "MCU.C"
+  1703 ;; Parameters:    Size  Location     Type
+  1704 ;;		None
+  1705 ;; Auto vars:     Size  Location     Type
+  1706 ;;		None
+  1707 ;; Return value:  Size  Location     Type
+  1708 ;;		None               void
+  1709 ;; Registers used:
+  1710 ;;		wreg
+  1711 ;; Tracked objects:
+  1712 ;;		On entry : 17F/0
+  1713 ;;		On exit  : 17F/20
+  1714 ;;		Unchanged: FFE80/0
+  1715 ;; Data sizes:     COMMON   BANK0   BANK1
+  1716 ;;      Params:         0       0       0
+  1717 ;;      Locals:         0       0       0
+  1718 ;;      Temps:          0       0       0
+  1719 ;;      Totals:         0       0       0
+  1720 ;;Total ram usage:        0 bytes
+  1721 ;; Hardware stack levels used:    1
+  1722 ;; Hardware stack levels required when called:    1
+  1723 ;; This function calls:
+  1724 ;;		Nothing
+  1725 ;; This function is called by:
+  1726 ;;		_MCU_Init
+  1727 ;; This function uses a non-reentrant model
+  1728 ;;
+  1729  0302                     _ADC_Init:	
+  1730  0302                     l6914:	
+  1731                           ; Regs used in _ADC_Init: [wreg]
+  1732                           
+  1733                           
+  1734                           ;MCU.C: 58: ADCON1 = 0B01100000;
+  1735  0302  3060               	movlw	96
+  1736  0303  1683               	bsf	3,5	;RP0=1, select bank1
+  1737  0304  009F               	movwf	31	;volatile
+  1738                           
+  1739                           ;MCU.C: 60: ADCON0 = 0B10111101;
+  1740  0305  30BD               	movlw	189
+  1741  0306  1283               	bcf	3,5	;RP0=0, select bank0
+  1742  0307  009F               	movwf	31	;volatile
+  1743                           
+  1744                           ;MCU.C: 67: ANSEL = 0B00110000;
+  1745  0308  3030               	movlw	48
+  1746  0309  1683               	bsf	3,5	;RP0=1, select bank1
+  1747  030A  0091               	movwf	17	;volatile
+  1748  030B  0008               	return
+  1749  030C                     __end_of_ADC_Init:	
+  1750                           
+  1751                           	psect	text610
+  1752  02DE                     __ptext610:	
+  1753 ;; =============== function _ADC_Init ends ============
+  1754                           
+  1755                           
+  1756 ;; *************** function _TIM_Init *****************
+  1757 ;; Defined at:
+  1758 ;;		line 35 in file "MCU.C"
+  1759 ;; Parameters:    Size  Location     Type
+  1760 ;;		None
+  1761 ;; Auto vars:     Size  Location     Type
+  1762 ;;		None
+  1763 ;; Return value:  Size  Location     Type
+  1764 ;;		None               void
+  1765 ;; Registers used:
+  1766 ;;		wreg, status,2
+  1767 ;; Tracked objects:
+  1768 ;;		On entry : 17F/0
+  1769 ;;		On exit  : 17F/0
+  1770 ;;		Unchanged: FFE80/0
+  1771 ;; Data sizes:     COMMON   BANK0   BANK1
+  1772 ;;      Params:         0       0       0
+  1773 ;;      Locals:         0       0       0
+  1774 ;;      Temps:          0       0       0
+  1775 ;;      Totals:         0       0       0
+  1776 ;;Total ram usage:        0 bytes
+  1777 ;; Hardware stack levels used:    1
+  1778 ;; Hardware stack levels required when called:    1
+  1779 ;; This function calls:
+  1780 ;;		Nothing
+  1781 ;; This function is called by:
+  1782 ;;		_MCU_Init
+  1783 ;; This function uses a non-reentrant model
+  1784 ;;
+  1785  02DE                     _TIM_Init:	
+  1786                           
+  1787                           ;MCU.C: 36: T2CON = 0B00000001;
+  1788                           
+  1789                           ; Regs used in _TIM_Init: [wreg+status,2]
+  1790  02DE  3001               	movlw	1
+  1791  02DF  0092               	movwf	18	;volatile
+  1792                           
+  1793                           ;MCU.C: 38: TMR2 = 0;
+  1794  02E0  0191               	clrf	17	;volatile
+  1795                           
+  1796                           ;MCU.C: 39: PR2 = 200;
+  1797  02E1  30C8               	movlw	200
+  1798  02E2  1683               	bsf	3,5	;RP0=1, select bank1
+  1799  02E3  0092               	movwf	18	;volatile
+  1800                           
+  1801                           ;MCU.C: 41: TMR2IF = 0;
+  1802  02E4  1283               	bcf	3,5	;RP0=0, select bank0
+  1803  02E5  108C               	bcf	12,1
+  1804                           
+  1805                           ;MCU.C: 42: TMR2IE = 1;
+  1806  02E6  1683               	bsf	3,5	;RP0=1, select bank1
+  1807  02E7  148C               	bsf	12,1
+  1808                           
+  1809                           ;MCU.C: 43: TMR2ON = 1;
+  1810  02E8  1283               	bcf	3,5	;RP0=0, select bank0
+  1811  02E9  1512               	bsf	18,2
+  1812                           
+  1813                           ;MCU.C: 44: PEIE=1;
+  1814  02EA  170B               	bsf	11,6
+  1815  02EB  0008               	return
+  1816  02EC                     __end_of_TIM_Init:	
+  1817                           
+  1818                           	psect	text611
+  1819  02B5                     __ptext611:	
+  1820 ;; =============== function _TIM_Init ends ============
+  1821                           
+  1822                           
+  1823 ;; *************** function _CLK_Init *****************
+  1824 ;; Defined at:
+  1825 ;;		line 6 in file "MCU.C"
+  1826 ;; Parameters:    Size  Location     Type
+  1827 ;;		None
+  1828 ;; Auto vars:     Size  Location     Type
+  1829 ;;		None
+  1830 ;; Return value:  Size  Location     Type
+  1831 ;;		None               void
+  1832 ;; Registers used:
+  1833 ;;		wreg, status,2
+  1834 ;; Tracked objects:
+  1835 ;;		On entry : 17F/0
+  1836 ;;		On exit  : 17F/0
+  1837 ;;		Unchanged: FFE80/0
+  1838 ;; Data sizes:     COMMON   BANK0   BANK1
+  1839 ;;      Params:         0       0       0
+  1840 ;;      Locals:         0       0       0
+  1841 ;;      Temps:          0       0       0
+  1842 ;;      Totals:         0       0       0
+  1843 ;;Total ram usage:        0 bytes
+  1844 ;; Hardware stack levels used:    1
+  1845 ;; Hardware stack levels required when called:    1
+  1846 ;; This function calls:
+  1847 ;;		Nothing
+  1848 ;; This function is called by:
+  1849 ;;		_MCU_Init
+  1850 ;; This function uses a non-reentrant model
+  1851 ;;
+  1852  02B5                     _CLK_Init:	
+  1853                           
+  1854                           ;MCU.C: 7: OSCCON = 0B01110001;
+  1855                           
+  1856                           ; Regs used in _CLK_Init: [wreg+status,2]
+  1857  02B5  3071               	movlw	113
+  1858  02B6  1683               	bsf	3,5	;RP0=1, select bank1
+  1859  02B7  008F               	movwf	15	;volatile
+  1860                           
+  1861                           ;MCU.C: 10: INTCON = 0;
+  1862  02B8  018B               	clrf	11	;volatile
+  1863                           
+  1864                           ;MCU.C: 12: ANSEL = 0X00;
+  1865  02B9  0191               	clrf	17	;volatile
+  1866                           
+  1867                           ;MCU.C: 14: PORTA =0B11001111;
+  1868  02BA  30CF               	movlw	207
+  1869                           
+  1870                           ;MCU.C: 15: TRISA = 0B11001111;
+  1871                           
+  1872                           ;MCU.C: 16: WPUA = 0B11001000;
+  1873  02BB  22C9               	fcall	PL2	;call to abstracted procedure
+  1874                           
+  1875                           ;MCU.C: 18: PORTC =0B00000011;
+  1876  02BC  3003               	movlw	3
+  1877  02BD  1283               	bcf	3,5	;RP0=0, select bank0
+  1878  02BE  0087               	movwf	7	;volatile
+  1879                           
+  1880                           ;MCU.C: 19: TRISC = 0B00000011;
+  1881  02BF  1683               	bsf	3,5	;RP0=1, select bank1
+  1882  02C0  0087               	movwf	7	;volatile
+  1883                           
+  1884                           ;MCU.C: 20: WPUC = 0B00000000;
+  1885  02C1  0188               	clrf	8	;volatile
+  1886                           
+  1887                           ;MCU.C: 23: OPTION = 0B01001000;
+  1888  02C2  3048               	movlw	72
+  1889  02C3  0081               	movwf	1	;volatile
+  1890                           
+  1891                           ;MCU.C: 25: MSCKCON = 0B00000000;
+  1892  02C4  1283               	bcf	3,5	;RP0=0, select bank0
+  1893  02C5  019B               	clrf	27	;volatile
+  1894                           
+  1895                           ;MCU.C: 28: CMCON0 = 0B00000111;
+  1896  02C6  3007               	movlw	7
+  1897  02C7  0099               	movwf	25	;volatile
+  1898  02C8  0008               	return
+  1899  02C9                     __end_of_CLK_Init:	
+  1900  02C9                     PL2:	
+  1901  02C9  1283               	bcf	3,5	;RP0=0, select bank0
+  1902  02CA  0085               	movwf	5	;volatile
+  1903  02CB  1683               	bsf	3,5	;RP0=1, select bank1
+  1904  02CC  0085               	movwf	5	;volatile
+  1905  02CD  30C8               	movlw	200
+  1906  02CE  0095               	movwf	21	;volatile
+  1907  02CF  0008               	return
+  1908                           
+  1909                           	psect	text612
+  1910  0338                     __ptext612:	
+  1911 ;; =============== function _CLK_Init ends ============
+  1912                           
+  1913                           
+  1914 ;; *************** function _MOTO_Driver *****************
+  1915 ;; Defined at:
+  1916 ;;		line 6 in file "motor.c"
+  1917 ;; Parameters:    Size  Location     Type
+  1918 ;;		None
+  1919 ;; Auto vars:     Size  Location     Type
+  1920 ;;		None
+  1921 ;; Return value:  Size  Location     Type
+  1922 ;;		None               void
+  1923 ;; Registers used:
+  1924 ;;		None
+  1925 ;; Tracked objects:
+  1926 ;;		On entry : 60/0
+  1927 ;;		On exit  : 60/0
+  1928 ;;		Unchanged: FFFFFF9F/0
+  1929 ;; Data sizes:     COMMON   BANK0   BANK1
+  1930 ;;      Params:         0       0       0
+  1931 ;;      Locals:         0       0       0
+  1932 ;;      Temps:          0       0       0
+  1933 ;;      Totals:         0       0       0
+  1934 ;;Total ram usage:        0 bytes
+  1935 ;; Hardware stack levels used:    1
+  1936 ;; Hardware stack levels required when called:    1
+  1937 ;; This function calls:
+  1938 ;;		Nothing
+  1939 ;; This function is called by:
+  1940 ;;		_main
+  1941 ;; This function uses a non-reentrant model
+  1942 ;;
+  1943  0338                     _MOTO_Driver:	
+  1944                           
+  1945                           ; Regs used in _MOTO_Driver: []
+  1946  0338  0008               	return
+  1947  0339                     __end_of_MOTO_Driver:	
+  1948                           
+  1949                           	psect	text613
+  1950  032B                     __ptext613:	
+  1951 ;; =============== function _MOTO_Driver ends ============
+  1952                           
+  1953                           
+  1954 ;; *************** function _FUN_EnterWorkMode *****************
+  1955 ;; Defined at:
+  1956 ;;		line 521 in file "FUNCTION.C"
+  1957 ;; Parameters:    Size  Location     Type
+  1958 ;;		None
+  1959 ;; Auto vars:     Size  Location     Type
+  1960 ;;		None
+  1961 ;; Return value:  Size  Location     Type
+  1962 ;;		None               void
+  1963 ;; Registers used:
+  1964 ;;		wreg, status,2
+  1965 ;; Tracked objects:
+  1966 ;;		On entry : 60/0
+  1967 ;;		On exit  : 60/0
+  1968 ;;		Unchanged: FFF9F/0
+  1969 ;; Data sizes:     COMMON   BANK0   BANK1
+  1970 ;;      Params:         0       0       0
+  1971 ;;      Locals:         0       0       0
+  1972 ;;      Temps:          0       0       0
+  1973 ;;      Totals:         0       0       0
+  1974 ;;Total ram usage:        0 bytes
+  1975 ;; Hardware stack levels used:    1
+  1976 ;; Hardware stack levels required when called:    1
+  1977 ;; This function calls:
+  1978 ;;		Nothing
+  1979 ;; This function is called by:
+  1980 ;;		_FUN_Driver
+  1981 ;; This function uses a non-reentrant model
+  1982 ;;
+  1983  032B                     _FUN_EnterWorkMode:	
+  1984                           
+  1985                           ;FUNCTION.C: 522: gFun_workMode = WM_Work;
+  1986                           
+  1987                           ; Regs used in _FUN_EnterWorkMode: [wreg+status,2]
+  1988  032B  3002               	movlw	2
+  1989  032C  00F7               	movwf	_gFun_workMode
+  1990                           
+  1991                           ;FUNCTION.C: 523: gFun_workTimeCnt = 0;
+  1992  032D  01AC               	clrf	_gFun_workTimeCnt
+  1993  032E  01AD               	clrf	_gFun_workTimeCnt+1
+  1994                           
+  1995                           ;FUNCTION.C: 524: gFun_workTimeCntFor1s = 0;
+  1996  032F  01BC               	clrf	_gFun_workTimeCntFor1s
+  1997  0330  0008               	return
+  1998  0331                     __end_of_FUN_EnterWorkMode:	
+  1999                           
+  2000                           	psect	text614
+  2001  0324                     __ptext614:	
+  2002 ;; =============== function _FUN_EnterWorkMode ends ============
+  2003                           
+  2004                           
+  2005 ;; *************** function _FUN_EnterStandby *****************
+  2006 ;; Defined at:
+  2007 ;;		line 510 in file "FUNCTION.C"
+  2008 ;; Parameters:    Size  Location     Type
+  2009 ;;		None
+  2010 ;; Auto vars:     Size  Location     Type
+  2011 ;;		None
+  2012 ;; Return value:  Size  Location     Type
+  2013 ;;		None               void
+  2014 ;; Registers used:
+  2015 ;;		status,2
+  2016 ;; Tracked objects:
+  2017 ;;		On entry : 60/0
+  2018 ;;		On exit  : 60/0
+  2019 ;;		Unchanged: FFF9F/0
+  2020 ;; Data sizes:     COMMON   BANK0   BANK1
+  2021 ;;      Params:         0       0       0
+  2022 ;;      Locals:         0       0       0
+  2023 ;;      Temps:          0       0       0
+  2024 ;;      Totals:         0       0       0
+  2025 ;;Total ram usage:        0 bytes
+  2026 ;; Hardware stack levels used:    1
+  2027 ;; Hardware stack levels required when called:    1
+  2028 ;; This function calls:
+  2029 ;;		Nothing
+  2030 ;; This function is called by:
+  2031 ;;		_FUN_Driver
+  2032 ;; This function uses a non-reentrant model
+  2033 ;;
+  2034  0324                     _FUN_EnterStandby:	
+  2035                           
+  2036                           ;FUNCTION.C: 511: gFun_workMode = WM_Standby;
+  2037                           
+  2038                           ; Regs used in _FUN_EnterStandby: [status,2]
+  2039  0324  01F7               	clrf	_gFun_workMode
+  2040  0325  0AF7               	incf	_gFun_workMode,f
+  2041                           
+  2042                           ;FUNCTION.C: 512: gFun_workTimeCnt = 0;
+  2043  0326  01AC               	clrf	_gFun_workTimeCnt
+  2044  0327  01AD               	clrf	_gFun_workTimeCnt+1
+  2045                           
+  2046                           ;FUNCTION.C: 513: gbOcp = 0;
+  2047  0328  1371               	bcf	_gbOcp/(0+8),_gbOcp& (0+7)
+  2048                           
+  2049                           ;FUNCTION.C: 514: gbUcp = 0;
+  2050  0329  13F1               	bcf	_gbUcp/(0+8),_gbUcp& (0+7)
+  2051  032A  0008               	return
+  2052  032B                     __end_of_FUN_EnterStandby:	
+  2053                           
+  2054                           	psect	text615
+  2055  0101                     __ptext615:	
+  2056 ;; =============== function _FUN_EnterStandby ends ============
+  2057                           
+  2058                           
+  2059 ;; *************** function _LED_Display *****************
+  2060 ;; Defined at:
+  2061 ;;		line 425 in file "FUNCTION.C"
+  2062 ;; Parameters:    Size  Location     Type
+  2063 ;;		None
+  2064 ;; Auto vars:     Size  Location     Type
+  2065 ;;		None
+  2066 ;; Return value:  Size  Location     Type
+  2067 ;;		None               void
+  2068 ;; Registers used:
+  2069 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2070 ;; Tracked objects:
+  2071 ;;		On entry : 60/0
+  2072 ;;		On exit  : 60/0
+  2073 ;;		Unchanged: FFF9F/0
+  2074 ;; Data sizes:     COMMON   BANK0   BANK1
+  2075 ;;      Params:         0       0       0
+  2076 ;;      Locals:         0       0       0
+  2077 ;;      Temps:          0       0       0
+  2078 ;;      Totals:         0       0       0
+  2079 ;;Total ram usage:        0 bytes
+  2080 ;; Hardware stack levels used:    1
+  2081 ;; Hardware stack levels required when called:    1
+  2082 ;; This function calls:
+  2083 ;;		Nothing
+  2084 ;; This function is called by:
+  2085 ;;		_main
+  2086 ;; This function uses a non-reentrant model
+  2087 ;;
+  2088  0101                     _LED_Display:	
+  2089                           
+  2090                           ;FUNCTION.C: 426: if (++gFun_ledCnt_1hz >=50) {
+  2091                           
+  2092                           ; Regs used in _LED_Display: [wreg-fsr0h+status,2+status,0]
+  2093  0101  3032               	movlw	50
+  2094  0102  0AB7               	incf	_gFun_ledCnt_1hz,f
+  2095  0103  0237               	subwf	_gFun_ledCnt_1hz,w
+  2096  0104  1C03               	skipc
+  2097  0105  2909               	goto	l7376
+  2098  0106  3004               	movlw	(0+1) shl (_gbLed1hz& (0+7))
+  2099                           
+  2100                           ;FUNCTION.C: 427: gFun_ledCnt_1hz = 0;
+  2101  0107  01B7               	clrf	_gFun_ledCnt_1hz
+  2102                           
+  2103                           ;FUNCTION.C: 428: gbLed1hz = ~gbLed1hz;
+  2104  0108  06F1               	xorwf	_gbLed1hz/(0+8),f
+  2105  0109                     l7376:	
+  2106                           
+  2107                           ;FUNCTION.C: 429: }
+  2108                           ;FUNCTION.C: 430: if (++gFun_ledCnt_2hz >=25) {
+  2109  0109  3019               	movlw	25
+  2110  010A  0AB8               	incf	_gFun_ledCnt_2hz,f
+  2111  010B  0238               	subwf	_gFun_ledCnt_2hz,w
+  2112  010C  1C03               	skipc
+  2113  010D  2911               	goto	l7382
+  2114  010E  3008               	movlw	(0+1) shl (_gbLed2hz& (0+7))
+  2115                           
+  2116                           ;FUNCTION.C: 431: gFun_ledCnt_2hz = 0;
+  2117  010F  01B8               	clrf	_gFun_ledCnt_2hz
+  2118                           
+  2119                           ;FUNCTION.C: 432: gbLed2hz = ~gbLed2hz;
+  2120  0110  06F1               	xorwf	_gbLed2hz/(0+8),f
+  2121  0111                     l7382:	
+  2122                           
+  2123                           ;FUNCTION.C: 433: }
+  2124                           ;FUNCTION.C: 434: if (gFun_ledStopCnt !=0) {
+  2125  0111  0829               	movf	_gFun_ledStopCnt+1,w
+  2126  0112  0428               	iorwf	_gFun_ledStopCnt,w
+  2127  0113  1903               	skipnz
+  2128  0114  2949               	goto	l7408
+  2129                           
+  2130                           ;FUNCTION.C: 435: if (gFun_ledTimeCnt <65535)
+  2131  0115  0A2A               	incf	_gFun_ledTimeCnt,w
+  2132  0116  1903               	skipnz
+  2133  0117  0A2B               	incf	_gFun_ledTimeCnt+1,w
+  2134  0118  1903               	skipnz
+  2135  0119  291D               	goto	l7388
+  2136                           
+  2137                           ;FUNCTION.C: 436: gFun_ledTimeCnt++;
+  2138  011A  0AAA               	incf	_gFun_ledTimeCnt,f
+  2139  011B  1903               	skipnz
+  2140  011C  0AAB               	incf	_gFun_ledTimeCnt+1,f
+  2141  011D                     l7388:	
+  2142                           
+  2143                           ;FUNCTION.C: 437: if (gFun_ledTimeCnt >= gFun_ledStopCnt) {
+  2144  011D  0829               	movf	_gFun_ledStopCnt+1,w
+  2145  011E  022B               	subwf	_gFun_ledTimeCnt+1,w
+  2146  011F  1D03               	skipz
+  2147  0120  2923               	goto	u1505
+  2148  0121  0828               	movf	_gFun_ledStopCnt,w
+  2149  0122  022A               	subwf	_gFun_ledTimeCnt,w
+  2150  0123                     u1505:	
+  2151  0123  1C03               	skipc
+  2152  0124  2949               	goto	l7408
+  2153                           
+  2154                           ;FUNCTION.C: 438: gFun_ledMode = 0;
+  2155  0125  01B9               	clrf	_gFun_ledMode
+  2156                           
+  2157                           ;FUNCTION.C: 439: gFun_ledTimeCnt = 0;
+  2158  0126  01AA               	clrf	_gFun_ledTimeCnt
+  2159  0127  01AB               	clrf	_gFun_ledTimeCnt+1
+  2160                           
+  2161                           ;FUNCTION.C: 440: gFun_ledStopCnt = 0;
+  2162  0128  01A8               	clrf	_gFun_ledStopCnt
+  2163  0129  01A9               	clrf	_gFun_ledStopCnt+1
+  2164                           
+  2165                           ;FUNCTION.C: 441: gbLedEnd = 1;
+  2166  012A  1671               	bsf	_gbLedEnd/(0+8),_gbLedEnd& (0+7)
+  2167                           
+  2168                           ;FUNCTION.C: 442: gbLedWait = 0;
+  2169  012B  12F1               	bcf	_gbLedWait/(0+8),_gbLedWait& (0+7)
+  2170  012C  2949               	goto	l7408
+  2171  012D                     l1272:	
+  2172                           ;FUNCTION.C: 447: case LM_Off:
+  2173                           
+  2174                           
+  2175                           ;FUNCTION.C: 448: RC3=0;
+  2176  012D  1187               	bcf	7,3
+  2177                           
+  2178                           ;FUNCTION.C: 449: RC2=0;
+  2179  012E  1107               	bcf	7,2
+  2180                           
+  2181                           ;FUNCTION.C: 450: break;
+  2182  012F  0008               	return
+  2183  0130                     l1274:	
+  2184                           ;FUNCTION.C: 451: case LM_Red_On:
+  2185                           
+  2186                           
+  2187                           ;FUNCTION.C: 452: RC3=1;
+  2188  0130  1587               	bsf	7,3
+  2189                           
+  2190                           ;FUNCTION.C: 453: RC2=0;
+  2191  0131  1107               	bcf	7,2
+  2192                           
+  2193                           ;FUNCTION.C: 454: break;
+  2194  0132  0008               	return
+  2195  0133                     l1275:	
+  2196                           ;FUNCTION.C: 455: case LM_Blue_On:
+  2197                           
+  2198                           
+  2199                           ;FUNCTION.C: 456: RC3=0;
+  2200  0133  1187               	bcf	7,3
+  2201                           
+  2202                           ;FUNCTION.C: 457: RC2=1;
+  2203  0134  1507               	bsf	7,2
+  2204                           
+  2205                           ;FUNCTION.C: 458: break;
+  2206  0135  0008               	return
+  2207  0136                     l1276:	
+  2208                           ;FUNCTION.C: 459: case LM_Red_1HZ_3T:
+  2209                           
+  2210                           
+  2211                           ;FUNCTION.C: 460: if (gbLed1hz){
+  2212  0136  1D71               	btfss	_gbLed1hz/(0+8),_gbLed1hz& (0+7)
+  2213  0137  293A               	goto	l1277
+  2214  0138                     l7396:	
+  2215                           
+  2216                           ;FUNCTION.C: 461: RC3=1;
+  2217  0138  1587               	bsf	7,3
+  2218                           
+  2219                           ;FUNCTION.C: 462: } else {
+  2220  0139  293B               	goto	l1278
+  2221  013A                     l1277:	
+  2222                           
+  2223                           ;FUNCTION.C: 463: RC3=0;
+  2224  013A  1187               	bcf	7,3
+  2225  013B                     l1278:	
+  2226                           
+  2227                           ;FUNCTION.C: 464: }
+  2228                           ;FUNCTION.C: 465: RC2=0;
+  2229  013B  1107               	bcf	7,2
+  2230                           
+  2231                           ;FUNCTION.C: 466: break;
+  2232  013C  0008               	return
+  2233  013D                     l1279:	
+  2234                           ;FUNCTION.C: 467: case LM_Blue_1HZ_3T:
+  2235                           
+  2236                           
+  2237                           ;FUNCTION.C: 468: RC3=0;
+  2238  013D  1187               	bcf	7,3
+  2239                           
+  2240                           ;FUNCTION.C: 469: if (gbLed1hz){
+  2241  013E  1D71               	btfss	_gbLed1hz/(0+8),_gbLed1hz& (0+7)
+  2242  013F  293B               	goto	l1278
+  2243                           
+  2244                           ;FUNCTION.C: 470: RC2=1;
+  2245  0140  1507               	bsf	7,2
+  2246                           
+  2247                           ;FUNCTION.C: 471: } else {
+  2248  0141  0008               	return
+  2249  0142                     l1282:	
+  2250                           ;FUNCTION.C: 475: case LM_Red_1HZ_10T:
+  2251                           
+  2252                           
+  2253                           ;FUNCTION.C: 476: if (gbLed1hz){
+  2254  0142  2936               	goto	l1276
+  2255  0143                     l1285:	
+  2256                           ;FUNCTION.C: 483: case LM_Red_2HZ_10T:
+  2257                           
+  2258                           
+  2259                           ;FUNCTION.C: 484: if (gbLed2hz){
+  2260  0143  19F1               	btfsc	_gbLed2hz/(0+8),_gbLed2hz& (0+7)
+  2261  0144  2938               	goto	l7396
+  2262  0145  293A               	goto	l1277
+  2263  0146                     l1288:	
+  2264                           ;FUNCTION.C: 491: case LM_RedBlue_1HZ_1T:
+  2265                           
+  2266                           
+  2267                           ;FUNCTION.C: 492: if (gbLed1hz){
+  2268  0146  1971               	btfsc	_gbLed1hz/(0+8),_gbLed1hz& (0+7)
+  2269  0147  2930               	goto	l1274
+  2270  0148  2933               	goto	l1275
+  2271  0149                     l7408:	
+  2272  0149  0839               	movf	_gFun_ledMode,w
+  2273                           
+  2274                           ; Switch size 1, requested type "space"
+  2275                           ; Number of cases is 8, Range of values is 0 to 7
+  2276                           ; switch strategies available:
+  2277                           ; Name         Instructions Cycles
+  2278                           ; direct_byte           14     6 (fixed)
+  2279                           ; simple_byte           25    13 (average)
+  2280                           ; jumptable            260     6 (fixed)
+  2281                           ; rangetable            12     6 (fixed)
+  2282                           ; spacedrange           22     9 (fixed)
+  2283                           ; locatedrange           8     3 (fixed)
+  2284                           ;	Chosen strategy is direct_byte
+  2285  014A  0084               	movwf	4
+  2286  014B  3008               	movlw	8
+  2287  014C  0204               	subwf	4,w
+  2288  014D  1803               	skipnc
+  2289  014E  0008               	return
+  2290  014F  3003               	movlw	high S7986
+  2291  0150  008A               	movwf	10
+  2292  0151  301C               	movlw	low S7986
+  2293  0152  0704               	addwf	4,w
+  2294  0153  0082               	movwf	2
+  2295  0154  0008               	return
+  2296  0155                     __end_of_LED_Display:	
+  2297                           
+  2298                           	psect	swtext1
+  2299  031C                     __pswtext1:	
+  2300  031C                     S7986:	
+  2301  031C  292D               	ljmp	l1272
+  2302  031D  2930               	ljmp	l1274
+  2303  031E  2933               	ljmp	l1275
+  2304  031F  2936               	ljmp	l1276
+  2305  0320  293D               	ljmp	l1279
+  2306  0321  2942               	ljmp	l1282
+  2307  0322  2943               	ljmp	l1285
+  2308  0323  2946               	ljmp	l1288
+  2309                           
+  2310                           	psect	text616
+  2311  01A8                     __ptext616:	
+  2312 ;; =============== function _LED_Display ends ============
+  2313                           
+  2314                           
+  2315 ;; *************** function _LED_SetMode *****************
+  2316 ;; Defined at:
+  2317 ;;		line 394 in file "FUNCTION.C"
+  2318 ;; Parameters:    Size  Location     Type
+  2319 ;;  mode            1    wreg     enum E1603
+  2320 ;; Auto vars:     Size  Location     Type
+  2321 ;;  mode            1    2[COMMON] enum E1603
+  2322 ;; Return value:  Size  Location     Type
+  2323 ;;		None               void
+  2324 ;; Registers used:
+  2325 ;;		wreg, status,2, status,0
+  2326 ;; Tracked objects:
+  2327 ;;		On entry : 60/0
+  2328 ;;		On exit  : 60/0
+  2329 ;;		Unchanged: FFF9F/0
+  2330 ;; Data sizes:     COMMON   BANK0   BANK1
+  2331 ;;      Params:         0       0       0
+  2332 ;;      Locals:         1       0       0
+  2333 ;;      Temps:          0       0       0
+  2334 ;;      Totals:         1       0       0
+  2335 ;;Total ram usage:        1 bytes
+  2336 ;; Hardware stack levels used:    1
+  2337 ;; Hardware stack levels required when called:    1
+  2338 ;; This function calls:
+  2339 ;;		Nothing
+  2340 ;; This function is called by:
+  2341 ;;		_FUN_Driver
+  2342 ;; This function uses a non-reentrant model
+  2343 ;;
+  2344  01A8                     _LED_SetMode:	
+  2345                           
+  2346                           ; Regs used in _LED_SetMode: [wreg+status,2+status,0]
+  2347                           ;LED_SetMode@mode stored from wreg
+  2348  01A8  00F4               	movwf	LED_SetMode@mode
+  2349                           
+  2350                           ;FUNCTION.C: 395: if (gFun_ledMode != mode && gFun_ledStopCnt==0) {
+  2351  01A9  0639               	xorwf	_gFun_ledMode,w
+  2352  01AA  1903               	skipnz
+  2353  01AB  0008               	return
+  2354  01AC  0829               	movf	_gFun_ledStopCnt+1,w
+  2355  01AD  0428               	iorwf	_gFun_ledStopCnt,w
+  2356  01AE  1D03               	skipz
+  2357  01AF  0008               	return
+  2358                           
+  2359                           ;FUNCTION.C: 396: gFun_ledMode = mode;
+  2360  01B0  0874               	movf	LED_SetMode@mode,w
+  2361  01B1  00B9               	movwf	_gFun_ledMode
+  2362                           
+  2363                           ;FUNCTION.C: 397: gFun_ledCnt_1hz = 0;
+  2364  01B2  01B7               	clrf	_gFun_ledCnt_1hz
+  2365                           
+  2366                           ;FUNCTION.C: 398: gFun_ledCnt_2hz = 0;
+  2367  01B3  01B8               	clrf	_gFun_ledCnt_2hz
+  2368                           
+  2369                           ;FUNCTION.C: 399: gbLed1hz = 1;
+  2370  01B4  1571               	bsf	_gbLed1hz/(0+8),_gbLed1hz& (0+7)
+  2371                           
+  2372                           ;FUNCTION.C: 400: gbLed2hz = 1;
+  2373  01B5  15F1               	bsf	_gbLed2hz/(0+8),_gbLed2hz& (0+7)
+  2374                           
+  2375                           ;FUNCTION.C: 401: gFun_ledTimeCnt = 0;
+  2376  01B6  01AA               	clrf	_gFun_ledTimeCnt
+  2377  01B7  01AB               	clrf	_gFun_ledTimeCnt+1
+  2378                           
+  2379                           ;FUNCTION.C: 402: gbLedWait = 0;
+  2380  01B8  12F1               	bcf	_gbLedWait/(0+8),_gbLedWait& (0+7)
+  2381                           
+  2382                           ;FUNCTION.C: 403: if (mode==LM_Red_1HZ_3T || mode==LM_Blue_1HZ_3T) {
+  2383  01B9  0874               	movf	LED_SetMode@mode,w
+  2384  01BA  3A03               	xorlw	3
+  2385  01BB  1903               	skipnz
+  2386  01BC  29C1               	goto	l7348
+  2387  01BD  0874               	movf	LED_SetMode@mode,w
+  2388  01BE  3A04               	xorlw	4
+  2389  01BF  1D03               	skipz
+  2390  01C0  29C6               	goto	l7350
+  2391  01C1                     l7348:	
+  2392                           
+  2393                           ;FUNCTION.C: 404: gFun_ledStopCnt = 300;
+  2394  01C1  302C               	movlw	44
+  2395  01C2  00A8               	movwf	_gFun_ledStopCnt
+  2396  01C3  3001               	movlw	1
+  2397  01C4  00A9               	movwf	_gFun_ledStopCnt+1
+  2398                           
+  2399                           ;FUNCTION.C: 405: } else if (mode==LM_Red_1HZ_10T) {
+  2400  01C5  0008               	return
+  2401  01C6                     l7350:	
+  2402  01C6  0874               	movf	LED_SetMode@mode,w
+  2403  01C7  3A05               	xorlw	5
+  2404  01C8  1D03               	skipz
+  2405  01C9  29D8               	goto	l7356
+  2406                           
+  2407                           ;FUNCTION.C: 406: gFun_ledStopCnt = 1000;
+  2408  01CA  30E8               	movlw	232
+  2409  01CB  00A8               	movwf	_gFun_ledStopCnt
+  2410  01CC  3003               	movlw	3
+  2411  01CD  29D1               	goto	L7
+  2412  01CE                     l7358:	
+  2413                           
+  2414                           ;FUNCTION.C: 409: gFun_ledStopCnt = 500;
+  2415  01CE  30F4               	movlw	244
+  2416  01CF  00A8               	movwf	_gFun_ledStopCnt
+  2417  01D0  3001               	movlw	1
+  2418  01D1                     L7:	
+  2419  01D1  00A9               	movwf	_gFun_ledStopCnt+1
+  2420  01D2  29D6               	goto	l7354
+  2421  01D3                     l7364:	
+  2422                           
+  2423                           ;FUNCTION.C: 412: gFun_ledStopCnt = 100;
+  2424  01D3  3064               	movlw	100
+  2425  01D4  00A8               	movwf	_gFun_ledStopCnt
+  2426  01D5  01A9               	clrf	_gFun_ledStopCnt+1
+  2427  01D6                     l7354:	
+  2428                           
+  2429                           ;FUNCTION.C: 407: gbLedWait = 1;
+  2430  01D6  16F1               	bsf	_gbLedWait/(0+8),_gbLedWait& (0+7)
+  2431                           
+  2432                           ;FUNCTION.C: 408: } else if (mode==LM_Red_2HZ_10T) {
+  2433  01D7  0008               	return
+  2434  01D8                     l7356:	
+  2435  01D8  0874               	movf	LED_SetMode@mode,w
+  2436  01D9  3A06               	xorlw	6
+  2437  01DA  1903               	btfsc	3,2
+  2438  01DB  29CE               	goto	l7358
+  2439  01DC  0874               	movf	LED_SetMode@mode,w
+  2440  01DD  3A07               	xorlw	7
+  2441  01DE  1903               	btfsc	3,2
+  2442  01DF  29D3               	goto	l7364
+  2443                           
+  2444                           ;FUNCTION.C: 415: gFun_ledStopCnt = 0;
+  2445  01E0  01A8               	clrf	_gFun_ledStopCnt
+  2446  01E1  01A9               	clrf	_gFun_ledStopCnt+1
+  2447  01E2  0008               	return
+  2448  01E3                     __end_of_LED_SetMode:	
+  2449                           
+  2450                           	psect	text617
+  2451  0331                     __ptext617:	
+  2452 ;; =============== function _LED_SetMode ends ============
+  2453                           
+  2454                           
+  2455 ;; *************** function _FUN_Init *****************
+  2456 ;; Defined at:
+  2457 ;;		line 381 in file "FUNCTION.C"
+  2458 ;; Parameters:    Size  Location     Type
+  2459 ;;		None
+  2460 ;; Auto vars:     Size  Location     Type
+  2461 ;;		None
+  2462 ;; Return value:  Size  Location     Type
+  2463 ;;		None               void
+  2464 ;; Registers used:
+  2465 ;;		wreg
+  2466 ;; Tracked objects:
+  2467 ;;		On entry : 17F/20
+  2468 ;;		On exit  : 17F/0
+  2469 ;;		Unchanged: FFE80/0
+  2470 ;; Data sizes:     COMMON   BANK0   BANK1
+  2471 ;;      Params:         0       0       0
+  2472 ;;      Locals:         0       0       0
+  2473 ;;      Temps:          0       0       0
+  2474 ;;      Totals:         0       0       0
+  2475 ;;Total ram usage:        0 bytes
+  2476 ;; Hardware stack levels used:    1
+  2477 ;; Hardware stack levels required when called:    1
+  2478 ;; This function calls:
+  2479 ;;		Nothing
+  2480 ;; This function is called by:
+  2481 ;;		_main
+  2482 ;; This function uses a non-reentrant model
+  2483 ;;
+  2484  0331                     _FUN_Init:	
+  2485                           
+  2486                           ;FUNCTION.C: 383: gFun_keyIdleCnt = 255;
+  2487                           
+  2488                           ; Regs used in _FUN_Init: [wreg]
+  2489  0331  30FF               	movlw	255
+  2490  0332  1283               	bcf	3,5	;RP0=0, select bank0
+  2491  0333  00C4               	movwf	_gFun_keyIdleCnt
+  2492  0334  0008               	return
+  2493  0335                     __end_of_FUN_Init:	
+  2494                           
+  2495                           	psect	text618
+  2496  0155                     __ptext618:	
+  2497 ;; =============== function _FUN_Init ends ============
+  2498                           
+  2499                           
+  2500 ;; *************** function _ADC_Deal *****************
+  2501 ;; Defined at:
+  2502 ;;		line 296 in file "FUNCTION.C"
+  2503 ;; Parameters:    Size  Location     Type
+  2504 ;;		None
+  2505 ;; Auto vars:     Size  Location     Type
+  2506 ;;		None
+  2507 ;; Return value:  Size  Location     Type
+  2508 ;;		None               void
+  2509 ;; Registers used:
+  2510 ;;		wreg, status,2, status,0
+  2511 ;; Tracked objects:
+  2512 ;;		On entry : 60/0
+  2513 ;;		On exit  : 60/0
+  2514 ;;		Unchanged: FFF9F/0
+  2515 ;; Data sizes:     COMMON   BANK0   BANK1
+  2516 ;;      Params:         0       0       0
+  2517 ;;      Locals:         0       0       0
+  2518 ;;      Temps:          0       0       0
+  2519 ;;      Totals:         0       0       0
+  2520 ;;Total ram usage:        0 bytes
+  2521 ;; Hardware stack levels used:    1
+  2522 ;; Hardware stack levels required when called:    1
+  2523 ;; This function calls:
+  2524 ;;		Nothing
+  2525 ;; This function is called by:
+  2526 ;;		_main
+  2527 ;; This function uses a non-reentrant model
+  2528 ;;
+  2529  0155                     _ADC_Deal:	
+  2530                           
+  2531                           ;FUNCTION.C: 301: if (gFun_workMode == WM_Sleep) {
+  2532                           
+  2533                           ; Regs used in _ADC_Deal: [wreg+status,2+status,0]
+  2534  0155  0877               	movf	_gFun_workMode,w
+  2535  0156  3A03               	xorlw	3
+  2536  0157  1D03               	skipz
+  2537  0158  295C               	goto	l7266
+  2538  0159                     l7264:	
+  2539                           
+  2540                           ;FUNCTION.C: 302: gFun_ucpTimeCnt = 0;
+  2541  0159  01BB               	clrf	_gFun_ucpTimeCnt
+  2542                           
+  2543                           ;FUNCTION.C: 303: gFun_ocpTimeCnt = 0;
+  2544  015A  01BA               	clrf	_gFun_ocpTimeCnt
+  2545                           
+  2546                           ;FUNCTION.C: 304: } else {
+  2547  015B  0008               	return
+  2548  015C                     l7266:	
+  2549                           
+  2550                           ;FUNCTION.C: 305: if (gFun_adcDealDelay < 10) {
+  2551  015C  300A               	movlw	10
+  2552  015D  0230               	subwf	_gFun_adcDealDelay,w
+  2553  015E  1803               	skipnc
+  2554  015F  2962               	goto	l7274
+  2555                           
+  2556                           ;FUNCTION.C: 306: gFun_adcDealDelay++;
+  2557  0160  0AB0               	incf	_gFun_adcDealDelay,f
+  2558  0161  0008               	return
+  2559  0162                     l7274:	
+  2560  0162  3001               	movlw	1
+  2561                           
+  2562                           ;FUNCTION.C: 309: gFun_adcDealDelay = 0;
+  2563  0163  01B0               	clrf	_gFun_adcDealDelay
+  2564                           
+  2565                           ;FUNCTION.C: 310: }
+  2566                           ;FUNCTION.C: 313: if (gFun_adBatVol < ((275)*47ul*512/147/100)) {
+  2567  0164  0221               	subwf	_gFun_adBatVol+1,w
+  2568  0165  30C2               	movlw	194
+  2569  0166  1903               	skipnz
+  2570  0167  0220               	subwf	_gFun_adBatVol,w
+  2571  0168  1803               	skipnc
+  2572  0169  296C               	goto	l7280
+  2573                           
+  2574                           ;FUNCTION.C: 314: gFun_batVolState = 0;
+  2575  016A  01B2               	clrf	_gFun_batVolState
+  2576                           
+  2577                           ;FUNCTION.C: 315: } else if (gFun_adBatVol < ((320)*47ul*512/147/100)) {
+  2578  016B  2978               	goto	l1230
+  2579  016C                     l7280:	
+  2580  016C  3002               	movlw	2
+  2581  016D  0221               	subwf	_gFun_adBatVol+1,w
+  2582  016E  300B               	movlw	11
+  2583  016F  1903               	skipnz
+  2584  0170  0220               	subwf	_gFun_adBatVol,w
+  2585  0171  1803               	skipnc
+  2586  0172  2976               	goto	l7284
+  2587                           
+  2588                           ;FUNCTION.C: 316: gFun_batVolState = 1;
+  2589  0173  01B2               	clrf	_gFun_batVolState
+  2590  0174  0AB2               	incf	_gFun_batVolState,f
+  2591                           
+  2592                           ;FUNCTION.C: 317: } else {
+  2593  0175  2978               	goto	l1230
+  2594  0176                     l7284:	
+  2595                           
+  2596                           ;FUNCTION.C: 318: gFun_batVolState = 2;
+  2597  0176  3002               	movlw	2
+  2598  0177  00B2               	movwf	_gFun_batVolState
+  2599  0178                     l1230:	
+  2600                           
+  2601                           ;FUNCTION.C: 319: }
+  2602                           ;FUNCTION.C: 325: if (gFun_workMode == WM_Work) {
+  2603  0178  0877               	movf	_gFun_workMode,w
+  2604  0179  3A02               	xorlw	2
+  2605  017A  1D03               	skipz
+  2606  017B  2959               	goto	l7264
+  2607                           
+  2608                           ;FUNCTION.C: 327: gFun_motoCurrState = 0;
+  2609  017C  3000               	movlw	0
+  2610  017D  0223               	subwf	_gFun_adCurrent+1,w
+  2611  017E  300F               	movlw	15
+  2612  017F  1903               	skipnz
+  2613  0180  0222               	subwf	_gFun_adCurrent,w
+  2614  0181  1803               	skipnc
+  2615  0182  298D               	goto	l7296
+  2616                           
+  2617                           ;FUNCTION.C: 328: if (gFun_ocpTimeCnt)
+  2618  0183  083A               	movf	_gFun_ocpTimeCnt,w
+  2619  0184  1903               	btfsc	3,2
+  2620  0185  2987               	goto	l7292
+  2621                           
+  2622                           ;FUNCTION.C: 329: gFun_ocpTimeCnt--;
+  2623  0186  03BA               	decf	_gFun_ocpTimeCnt,f
+  2624  0187                     l7292:	
+  2625                           
+  2626                           ;FUNCTION.C: 330: if (gFun_ucpTimeCnt < 255)
+  2627  0187  083B               	movf	_gFun_ucpTimeCnt,w
+  2628  0188  3AFF               	xorlw	255
+  2629  0189  1903               	skipnz
+  2630  018A  299F               	goto	l7314
+  2631                           
+  2632                           ;FUNCTION.C: 331: gFun_ucpTimeCnt++;
+  2633  018B  0ABB               	incf	_gFun_ucpTimeCnt,f
+  2634  018C  299F               	goto	l7314
+  2635  018D                     l7296:	
+  2636                           
+  2637                           ;FUNCTION.C: 333: gFun_motoCurrState = 1;
+  2638  018D  3000               	movlw	0
+  2639  018E  0223               	subwf	_gFun_adCurrent+1,w
+  2640  018F  3040               	movlw	64
+  2641  0190  1903               	skipnz
+  2642  0191  0222               	subwf	_gFun_adCurrent,w
+  2643                           
+  2644                           ;FUNCTION.C: 334: if (gFun_ocpTimeCnt)
+  2645  0192  083A               	movf	_gFun_ocpTimeCnt,w
+  2646  0193  1803               	skipnc
+  2647  0194  2999               	goto	L8
+  2648  0195  1903               	btfsc	3,2
+  2649  0196  299C               	goto	l7310
+  2650                           
+  2651                           ;FUNCTION.C: 335: gFun_ocpTimeCnt--;
+  2652  0197  03BA               	decf	_gFun_ocpTimeCnt,f
+  2653  0198  299C               	goto	l7310
+  2654  0199                     L8:	
+  2655                           ;FUNCTION.C: 340: if (gFun_ocpTimeCnt < 255)
+  2656                           
+  2657                           ;FUNCTION.C: 336: if (gFun_ucpTimeCnt)
+  2658                           
+  2659  0199  3AFF               	xorlw	255
+  2660  019A  1D03               	btfss	3,2
+  2661                           
+  2662                           ;FUNCTION.C: 341: gFun_ocpTimeCnt++;
+  2663  019B  0ABA               	incf	_gFun_ocpTimeCnt,f
+  2664  019C                     l7310:	
+  2665                           
+  2666                           ;FUNCTION.C: 342: if (gFun_ucpTimeCnt)
+  2667  019C  083B               	movf	_gFun_ucpTimeCnt,w
+  2668  019D  1D03               	skipz
+  2669                           
+  2670                           ;FUNCTION.C: 337: gFun_ucpTimeCnt--;
+  2671  019E  03BB               	decf	_gFun_ucpTimeCnt,f
+  2672  019F                     l7314:	
+  2673                           
+  2674                           ;FUNCTION.C: 344: }
+  2675                           ;FUNCTION.C: 345: if (gFun_ocpTimeCnt >= 2) {
+  2676  019F  3002               	movlw	2
+  2677  01A0  023A               	subwf	_gFun_ocpTimeCnt,w
+  2678  01A1  1803               	btfsc	3,0
+  2679                           
+  2680                           ;FUNCTION.C: 346: gbOcp = 1;
+  2681  01A2  1771               	bsf	_gbOcp/(0+8),_gbOcp& (0+7)
+  2682                           
+  2683                           ;FUNCTION.C: 347: }
+  2684                           ;FUNCTION.C: 348: if (gFun_ucpTimeCnt >= 50) {
+  2685  01A3  3032               	movlw	50
+  2686  01A4  023B               	subwf	_gFun_ucpTimeCnt,w
+  2687  01A5  1803               	btfsc	3,0
+  2688                           
+  2689                           ;FUNCTION.C: 349: gbUcp = 1;
+  2690  01A6  17F1               	bsf	_gbUcp/(0+8),_gbUcp& (0+7)
+  2691  01A7  0008               	return
+  2692  01A8                     __end_of_ADC_Deal:	
+  2693                           
+  2694                           	psect	text619
+  2695  00A8                     __ptext619:	
+  2696 ;; =============== function _ADC_Deal ends ============
+  2697                           
+  2698                           
+  2699 ;; *************** function _KEY_Driver *****************
+  2700 ;; Defined at:
+  2701 ;;		line 217 in file "FUNCTION.C"
+  2702 ;; Parameters:    Size  Location     Type
+  2703 ;;		None
+  2704 ;; Auto vars:     Size  Location     Type
+  2705 ;;		None
+  2706 ;; Return value:  Size  Location     Type
+  2707 ;;		None               void
+  2708 ;; Registers used:
+  2709 ;;		wreg, status,2, status,0
+  2710 ;; Tracked objects:
+  2711 ;;		On entry : 60/0
+  2712 ;;		On exit  : 0/0
+  2713 ;;		Unchanged: FFE00/0
+  2714 ;; Data sizes:     COMMON   BANK0   BANK1
+  2715 ;;      Params:         0       0       0
+  2716 ;;      Locals:         0       0       0
+  2717 ;;      Temps:          1       0       0
+  2718 ;;      Totals:         1       0       0
+  2719 ;;Total ram usage:        1 bytes
+  2720 ;; Hardware stack levels used:    1
+  2721 ;; Hardware stack levels required when called:    1
+  2722 ;; This function calls:
+  2723 ;;		Nothing
+  2724 ;; This function is called by:
+  2725 ;;		_main
+  2726 ;; This function uses a non-reentrant model
+  2727 ;;
+  2728  00A8                     _KEY_Driver:	
+  2729                           
+  2730                           ;FUNCTION.C: 218: if ( (RA3==0) ) bkeyTemp = 1;
+  2731                           
+  2732                           ; Regs used in _KEY_Driver: [wreg+status,2+status,0]
+  2733  00A8  1985               	btfsc	5,3
+  2734  00A9  28AC               	goto	l1196
+  2735  00AA  1670               	bsf	_bkeyTemp/(0+8),_bkeyTemp& (0+7)
+  2736  00AB  28AD               	goto	l1197
+  2737  00AC                     l1196:	
+  2738                           
+  2739                           ;FUNCTION.C: 219: else bkeyTemp = 0;
+  2740  00AC  1270               	bcf	_bkeyTemp/(0+8),_bkeyTemp& (0+7)
+  2741  00AD                     l1197:	
+  2742                           
+  2743                           ;FUNCTION.C: 221: if (gbLedWait) {
+  2744  00AD  1EF1               	btfss	_gbLedWait/(0+8),_gbLedWait& (0+7)
+  2745  00AE  28B1               	goto	l7228
+  2746                           
+  2747                           ;FUNCTION.C: 222: gFun_keyTimeCnt = 0;
+  2748  00AF  01B6               	clrf	_gFun_keyTimeCnt
+  2749  00B0  0008               	return
+  2750  00B1                     l7228:	
+  2751                           
+  2752                           ;FUNCTION.C: 224: }
+  2753                           ;FUNCTION.C: 226: if (bkeyTemp != bkeyBuff) {
+  2754  00B1  1CF0               	btfss	_bkeyBuff/(0+8),_bkeyBuff& (0+7)
+  2755  00B2  28B5               	goto	u1080
+  2756  00B3  3001               	movlw	1
+  2757  00B4  28B6               	goto	u1082
+  2758  00B5                     u1080:	
+  2759  00B5  3000               	movlw	0
+  2760  00B6                     u1082:	
+  2761  00B6  00F4               	movwf	??_KEY_Driver
+  2762  00B7  1E70               	btfss	_bkeyTemp/(0+8),_bkeyTemp& (0+7)
+  2763  00B8  28BB               	goto	u1090
+  2764  00B9  3001               	movlw	1
+  2765  00BA  28BC               	goto	u1092
+  2766  00BB                     u1090:	
+  2767  00BB  3000               	movlw	0
+  2768  00BC                     u1092:	
+  2769  00BC  0674               	xorwf	??_KEY_Driver,w
+  2770  00BD  1903               	skipnz
+  2771  00BE  28C4               	goto	l7234
+  2772                           
+  2773                           ;FUNCTION.C: 227: gFun_keyTimeCnt = 0;
+  2774  00BF  01B6               	clrf	_gFun_keyTimeCnt
+  2775                           
+  2776                           ;FUNCTION.C: 228: bkeyBuff = bkeyTemp;
+  2777  00C0  10F0               	bcf	_bkeyBuff/(0+8),_bkeyBuff& (0+7)
+  2778  00C1  1A70               	btfsc	_bkeyTemp/(0+8),_bkeyTemp& (0+7)
+  2779  00C2  14F0               	bsf	_bkeyBuff/(0+8),_bkeyBuff& (0+7)
+  2780                           
+  2781                           ;FUNCTION.C: 229: } else {
+  2782  00C3  28F0               	goto	l7250
+  2783  00C4                     l7234:	
+  2784                           
+  2785                           ;FUNCTION.C: 230: if (gFun_keyTimeCnt < 5) {
+  2786  00C4  3005               	movlw	5
+  2787  00C5  0236               	subwf	_gFun_keyTimeCnt,w
+  2788  00C6  1803               	skipnc
+  2789  00C7  28CA               	goto	l7238
+  2790                           
+  2791                           ;FUNCTION.C: 231: gFun_keyTimeCnt++;
+  2792  00C8  0AB6               	incf	_gFun_keyTimeCnt,f
+  2793                           
+  2794                           ;FUNCTION.C: 232: } else {
+  2795  00C9  28F0               	goto	l7250
+  2796  00CA                     l7238:	
+  2797                           
+  2798                           ;FUNCTION.C: 233: if (bkeyBuff != bkeyCode) {
+  2799  00CA  1D70               	btfss	_bkeyCode/(0+8),_bkeyCode& (0+7)
+  2800  00CB  28CE               	goto	u1130
+  2801  00CC  3001               	movlw	1
+  2802  00CD  28CF               	goto	u1132
+  2803  00CE                     u1130:	
+  2804  00CE  3000               	movlw	0
+  2805  00CF                     u1132:	
+  2806  00CF  00F4               	movwf	??_KEY_Driver
+  2807  00D0  1CF0               	btfss	_bkeyBuff/(0+8),_bkeyBuff& (0+7)
+  2808  00D1  28D4               	goto	u1140
+  2809  00D2  3001               	movlw	1
+  2810  00D3  28D5               	goto	u1142
+  2811  00D4                     u1140:	
+  2812  00D4  3000               	movlw	0
+  2813  00D5                     u1142:	
+  2814  00D5  0674               	xorwf	??_KEY_Driver,w
+  2815  00D6  1903               	skipnz
+  2816  00D7  28F0               	goto	l7250
+  2817                           
+  2818                           ;FUNCTION.C: 234: bkeyCode = bkeyBuff;
+  2819  00D8  1170               	bcf	_bkeyCode/(0+8),_bkeyCode& (0+7)
+  2820  00D9  1CF0               	btfss	_bkeyBuff/(0+8),_bkeyBuff& (0+7)
+  2821  00DA  28DC               	goto	u1165
+  2822  00DB  1570               	bsf	_bkeyCode/(0+8),_bkeyCode& (0+7)
+  2823  00DC                     u1165:	
+  2824                           
+  2825                           ;FUNCTION.C: 235: bkeyUp = 0;
+  2826  00DC  12F0               	bcf	_bkeyUp/(0+8),_bkeyUp& (0+7)
+  2827                           
+  2828                           ;FUNCTION.C: 236: if (bkeyBuff) {
+  2829  00DD  1CF0               	btfss	_bkeyBuff/(0+8),_bkeyBuff& (0+7)
+  2830  00DE  28EA               	goto	l1205
+  2831                           
+  2832                           ;FUNCTION.C: 238: if (gFun_keyIdleCnt <20) {
+  2833  00DF  3014               	movlw	20
+  2834  00E0  1283               	bcf	3,5	;RP0=0, select bank0
+  2835  00E1  1303               	bcf	3,6	;RP1=0, select bank0
+  2836  00E2  0244               	subwf	_gFun_keyIdleCnt,w
+  2837  00E3  1803               	skipnc
+  2838  00E4  28E8               	goto	l1206
+  2839                           
+  2840                           ;FUNCTION.C: 239: gbKeyDouClick = 1;
+  2841  00E5  14F1               	bsf	_gbKeyDouClick/(0+8),_gbKeyDouClick& (0+7)
+  2842                           
+  2843                           ;FUNCTION.C: 240: bkeyDou = 1;
+  2844  00E6  15F0               	bsf	_bkeyDou/(0+8),_bkeyDou& (0+7)
+  2845                           
+  2846                           ;FUNCTION.C: 241: } else {
+  2847  00E7  28F0               	goto	l7250
+  2848  00E8                     l1206:	
+  2849                           
+  2850                           ;FUNCTION.C: 242: bkeyDou = 0;
+  2851  00E8  11F0               	bcf	_bkeyDou/(0+8),_bkeyDou& (0+7)
+  2852  00E9  28F0               	goto	l7250
+  2853  00EA                     l1205:	
+  2854                           
+  2855                           ;FUNCTION.C: 246: if (bkeyDou==0)
+  2856  00EA  19F0               	btfsc	_bkeyDou/(0+8),_bkeyDou& (0+7)
+  2857  00EB  28ED               	goto	l7248
+  2858                           
+  2859                           ;FUNCTION.C: 247: bkeyUp = 1;
+  2860  00EC  16F0               	bsf	_bkeyUp/(0+8),_bkeyUp& (0+7)
+  2861  00ED                     l7248:	
+  2862                           
+  2863                           ;FUNCTION.C: 248: gFun_keyIdleCnt = 0;
+  2864  00ED  1283               	bcf	3,5	;RP0=0, select bank0
+  2865  00EE  1303               	bcf	3,6	;RP1=0, select bank0
+  2866  00EF  01C4               	clrf	_gFun_keyIdleCnt
+  2867  00F0                     l7250:	
+  2868                           
+  2869                           ;FUNCTION.C: 249: }
+  2870                           ;FUNCTION.C: 250: }
+  2871                           ;FUNCTION.C: 251: }
+  2872                           ;FUNCTION.C: 252: }
+  2873                           ;FUNCTION.C: 253: if (bkeyCode==0) {
+  2874  00F0  1970               	btfsc	_bkeyCode/(0+8),_bkeyCode& (0+7)
+  2875  00F1  0008               	return
+  2876                           
+  2877                           ;FUNCTION.C: 254: if (gFun_keyIdleCnt < 255) {
+  2878  00F2  1283               	bcf	3,5	;RP0=0, select bank0
+  2879  00F3  1303               	bcf	3,6	;RP1=0, select bank0
+  2880  00F4  0844               	movf	_gFun_keyIdleCnt,w
+  2881  00F5  3AFF               	xorlw	255
+  2882  00F6  1D03               	btfss	3,2
+  2883                           
+  2884                           ;FUNCTION.C: 255: gFun_keyIdleCnt++;
+  2885  00F7  0AC4               	incf	_gFun_keyIdleCnt,f
+  2886                           
+  2887                           ;FUNCTION.C: 256: }
+  2888                           ;FUNCTION.C: 257: if (bkeyUp) {
+  2889  00F8  1EF0               	btfss	_bkeyUp/(0+8),_bkeyUp& (0+7)
+  2890  00F9  0008               	return
+  2891                           
+  2892                           ;FUNCTION.C: 258: if (gFun_keyIdleCnt > 25) {
+  2893  00FA  301A               	movlw	26
+  2894  00FB  0244               	subwf	_gFun_keyIdleCnt,w
+  2895  00FC  1C03               	skipc
+  2896  00FD  0008               	return
+  2897                           
+  2898                           ;FUNCTION.C: 259: bkeyUp = 0;
+  2899  00FE  12F0               	bcf	_bkeyUp/(0+8),_bkeyUp& (0+7)
+  2900                           
+  2901                           ;FUNCTION.C: 260: gbKeyClick = 1;
+  2902  00FF  1471               	bsf	_gbKeyClick/(0+8),_gbKeyClick& (0+7)
+  2903  0100  0008               	return
+  2904  0101                     __end_of_KEY_Driver:	
+  2905                           
+  2906                           	psect	text620
+  2907  0296                     __ptext620:	
+  2908 ;; =============== function _KEY_Driver ends ============
+  2909                           
+  2910                           
+  2911 ;; *************** function _ISR *****************
+  2912 ;; Defined at:
+  2913 ;;		line 9 in file "MCU_ISR.c"
+  2914 ;; Parameters:    Size  Location     Type
+  2915 ;;		None
+  2916 ;; Auto vars:     Size  Location     Type
+  2917 ;;		None
+  2918 ;; Return value:  Size  Location     Type
+  2919 ;;		None               void
+  2920 ;; Registers used:
+  2921 ;;		wreg, status,2, status,0
+  2922 ;; Tracked objects:
+  2923 ;;		On entry : 0/0
+  2924 ;;		On exit  : 40/0
+  2925 ;;		Unchanged: FFF9F/0
+  2926 ;; Data sizes:     COMMON   BANK0   BANK1
+  2927 ;;      Params:         0       0       0
+  2928 ;;      Locals:         0       0       0
+  2929 ;;      Temps:          2       0       0
+  2930 ;;      Totals:         2       0       0
+  2931 ;;Total ram usage:        2 bytes
+  2932 ;; Hardware stack levels used:    1
+  2933 ;; This function calls:
+  2934 ;;		Nothing
+  2935 ;; This function is called by:
+  2936 ;;		Interrupt level 1
+  2937 ;; This function uses a non-reentrant model
+  2938 ;;
+  2939  0296                     _ISR:	
+  2940                           
+  2941                           ;MCU_ISR.c: 10: if(TMR2IF)
+  2942  0296  1283               	bcf	3,5	;RP0=0, select bank0
+  2943  0297  1303               	bcf	3,6	;RP1=0, select bank0
+  2944  0298  1C8C               	btfss	12,1
+  2945  0299  2AA2               	goto	i1l7440
+  2946  029A  3064               	movlw	100
+  2947                           
+  2948                           ;MCU_ISR.c: 11: {
+  2949                           ;MCU_ISR.c: 12: TMR2IF = 0;
+  2950  029B  108C               	bcf	12,1
+  2951                           
+  2952                           ;MCU_ISR.c: 14: if (++gTimeCntFor10ms >= 100) {
+  2953  029C  0ABD               	incf	_gTimeCntFor10ms,f	;volatile
+  2954  029D  023D               	subwf	_gTimeCntFor10ms,w	;volatile
+  2955  029E  1C03               	skipc
+  2956  029F  2AA2               	goto	i1l7440
+  2957                           
+  2958                           ;MCU_ISR.c: 15: gTimeCntFor10ms = 0;
+  2959  02A0  01BD               	clrf	_gTimeCntFor10ms	;volatile
+  2960                           
+  2961                           ;MCU_ISR.c: 16: bTime10ms = 1;
+  2962  02A1  1470               	bsf	_bTime10ms/(0+8),_bTime10ms& (0+7)
+  2963  02A2                     i1l7440:	
+  2964                           
+  2965                           ;MCU_ISR.c: 17: }
+  2966                           ;MCU_ISR.c: 18: }
+  2967                           ;MCU_ISR.c: 20: if(PAIE && PAIF)
+  2968  02A2  198B               	btfsc	11,3
+  2969  02A3  1C0B               	btfss	11,0
+  2970  02A4  2AAE               	goto	i1l4582
+  2971                           
+  2972                           ;MCU_ISR.c: 21: {
+  2973                           ;MCU_ISR.c: 22: bakPORTA = PORTA;
+  2974  02A5  0805               	movf	5,w	;volatile
+  2975  02A6  00AE               	movwf	_bakPORTA	;volatile
+  2976                           
+  2977                           ;MCU_ISR.c: 23: PAIF = 0;
+  2978  02A7  100B               	bcf	11,0
+  2979                           
+  2980                           ;MCU_ISR.c: 24: PAIE = 0;
+  2981  02A8  118B               	bcf	11,3
+  2982                           
+  2983                           ;MCU_ISR.c: 25: IOCA0 =0;
+  2984  02A9  1683               	bsf	3,5	;RP0=1, select bank1
+  2985  02AA  1016               	bcf	22,0
+  2986                           
+  2987                           ;MCU_ISR.c: 26: IOCA1 =0;
+  2988  02AB  1096               	bcf	22,1
+  2989                           
+  2990                           ;MCU_ISR.c: 27: IOCA2 =0;
+  2991  02AC  1116               	bcf	22,2
+  2992                           
+  2993                           ;MCU_ISR.c: 28: IOCA3=0;
+  2994  02AD  1196               	bcf	22,3
+  2995  02AE                     i1l4582:	
+  2996  02AE  0873               	movf	??_ISR+1,w
+  2997  02AF  008A               	movwf	10
+  2998  02B0  0E72               	swapf	??_ISR^(0+-128),w
+  2999  02B1  0083               	movwf	3
+  3000  02B2  0EFE               	swapf	126,f
+  3001  02B3  0E7E               	swapf	126,w
+  3002  02B4  0009               	retfie
+  3003  02B5                     __end_of_ISR:	
+  3004                           
+  3005                           	psect	intentry
+  3006  0004                     __pintentry:	
+  3007                           ; Regs used in _ISR: [wreg+status,2+status,0]
+  3008                           
+  3009  0004                     interrupt_function:	
+  3010  007E                     saved_w	set	btemp
+  3011  0004  00FE               	movwf	btemp
+  3012  0005  0E03               	swapf	3,w
+  3013  0006  00F2               	movwf	??_ISR
+  3014  0007  080A               	movf	10,w
+  3015  0008  00F3               	movwf	??_ISR+1
+  3016  0009  2A96               	ljmp	_ISR
+  3017                           
+  3018                           	psect	text621
+  3019  0000                     __ptext621:	
+  3020 ;; =============== function _ISR ends ============
+  3021                           
+  3022  007E                     btemp	set	126	;btemp
+  3023  007E                     wtemp0	set	126
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Sun Apr 19 17:56:31 2020
+
+                _gFun_workMode 0077                              pc 0002     __size_of_FUN_EnterWorkMode 0006  
+                           fsr 0004            __size_of_ADC_Driver 0033                            _GIE 005F  
+                          _RA0 0028                            _RA1 0029                            _RA2 002A  
+                          _RA3 002B                            _RA4 002C                            _RC2 003A  
+                          _RC3 003B                            _PR2 0092                            _ISR 0296  
+                          _SR0 0CF6                            _SR1 0CF7                            indf 0000  
+                 ?_LED_Display 0072                   ?_LED_SetMode 0072                           S7986 031C  
+                         ?_ISR 0072               _gFun_workTimeCnt 002C                           l1205 00EA  
+                         l1206 00E8                           l1230 0178                           l1160 0000  
+                         l1330 00A2                           l1171 023B                           l1340 00A3  
+                         l1341 0000                           l1182 025D                           l1272 012D  
+                         l1336 0097                           l1328 0076                           l1249 0000  
+                         l1169 0231                           l1185 0000                           l1282 0142  
+                         l1274 0130                           l1275 0133                           l1179 025A  
+                         l1196 00AC                           l1276 0136                           l1188 0000  
+                         l1197 00AD                           l1285 0143                           l1277 013A  
+                         l1278 013B                           l1279 013D                           l1295 0000  
+                         l1288 0146                           l1298 0000                           l3502 0000  
+                         l3505 0000                           l3508 0000                           l3499 0000  
+                         l7220 0000                           l7300 0000                           l7310 019C  
+                         l7232 0000                           l7250 00F0                           l7234 00C4  
+                         l7314 019F                           l7228 00B1                           l7324 0000  
+                         l7340 0000                           l7332 0000                           l7420 0000  
+                         l7238 00CA                           l7262 0000                           l7350 01C6  
+                         l7342 0000                           l7334 0000                           l7326 0000  
+                         l7422 0000                           l5647 0000                           l7248 00ED  
+                         l7280 016C                           l7264 0159                           l7344 0000  
+                         l7336 0000                           l7408 0149                           l7416 0000  
+                         l7424 0000                           l7290 0000                           l7274 0162  
+                         l7266 015C                           l7354 01D6                           l7338 0000  
+                         l7370 0000                           l7418 0000                           l7426 0000  
+                         l7292 0187                           l7284 0176                           l7276 0000  
+                         l7364 01D3                           l7356 01D8                           l7348 01C1  
+                         l7380 0000                           l7428 0000                           l6900 0000  
+                         l7358 01CE                           l7382 0111                           l7374 0000  
+                         l6910 0000                           l6902 0000                           l7296 018D  
+                         l7392 0000                           l7376 0109                           l6912 0000  
+                         l6904 0000                           l7800 0000                           l7394 0000  
+                         l6906 0000                           l6914 0302                           l7722 0000  
+                         l7810 0000                           l7802 0000                           l7396 0138  
+                         l7388 011D                           l6908 0000                           l7724 0315  
+                         l7812 0000                           l7804 0000                           l7820 0000  
+                         l7726 0000                           l7806 0000                           l7814 0000  
+                         l7902 0000                           l7728 0000                           l7808 0000  
+                         l7816 0000                           l7840 0000                           l7832 0000  
+                         l7824 01E8                           l7920 0000                           l7912 0059  
+                         l6890 0000                           l7762 023F                           l7746 0000  
+                         l7770 0000                           l7818 0000                           l7842 020E  
+                         l7834 0000                           l7922 0067                           l7906 0054  
+                         l6892 0000                           l6948 0000                           l7764 0000  
+                         l7756 0000                           l7748 022B                           l7780 0000  
+                         l7772 0000                           l7844 0000                           l7836 0000  
+                         l7828 0000                           l7940 0000                           l7932 0000  
+                         l7916 005F                           l7860 0000                           l7852 0010  
+                         _ADON 00F8                           l6894 0000                           l7774 0000  
+                         l7766 0000                           l7790 0000                           l7846 0213  
+                         l7870 0028                           l7854 0012                           l6896 0000  
+                         l6888 0000                           l7776 0000                           l7768 0000  
+                         l7792 0000                           l7960 00A0                           l7944 0089  
+                         l7936 0000                           l7872 002A                           l7928 006D  
+                         l7856 0014                           l7848 0000                           l6898 0000  
+                         l7778 0000                           l7794 0000                           l7786 0000  
+                         l7890 0000                           l7970 0000                           l7962 0000  
+                         l7796 0000                           l7788 0000                           l7956 009B  
+                         l7948 0091                           l7884 0034                           l7868 0026  
+                         l7972 0000                           l7964 0000                           l7798 0000  
+                         l7894 0000                           l7878 002F                           l7974 0000  
+                         l7966 02D3                           l7896 0048                           l7898 004B  
+                         u1130 00CE                           u1140 00D4                           u1132 00CF  
+                         u1142 00D5                           u1080 00B5                           u1090 00BB  
+                         u1082 00B6                           _IOCA 0096                           u1092 00BC  
+                         u1165 00DC                           u1505 0123                           u2275 01FE  
+                         _PAIE 005B                           _PAIF 0058                           _PEIE 005E  
+                         _TMR2 0011                           _STRA 0CE8                           _STRB 0CE9  
+                         _STRC 0CEA                           _STRD 0CEB                           _WREN 0C62  
+                         _WPUA 0095                           _WPUC 0088                    ?_KEY_Driver 0072  
+                         _main 02D0                    ?_FUN_Driver 0072               __end_of_ADC_Deal 01A8  
+                         btemp 007E               __end_of_ADC_Init 030C                           start 000A  
+              __end_of_DelayUs 031C               ??_MCU_EnterSleep 0076                          ??_ISR 0072  
+             __end_of_CLK_Init 02C9                          _C1SEN 0CF5                          _C2REN 0CF4  
+                        ?_main 0072                          _EEPGD 0C67                          _ANSEL 0091  
+                        _IOCA0 04B0                          _IOCA1 04B1                          _IOCA2 04B2  
+                        _T2CON 0012                          _IOCA3 04B3               __end_of_MCU_Init 0338  
+             __end_of_FUN_Init 0335                          _PORTA 0005                          _PORTC 0007  
+                        _SRCON 019E                          _PULSR 0CF2                          _PULSS 0CF3  
+                        _TRISA 0085                          _TRISC 0087                          _GetAd 0246  
+                        _gbOcp 038E                          _gbUcp 038F               __end_of_TIM_Init 02EC  
+               __pbitbssCOMMON 0380                          pclath 000A                 _CUP_CHR_Driver 0216  
+                        status 0003                          wtemp0 007E       __size_of_MCU_SleepConfig 0025  
+                 __end_of_main 02DE       __end_of_FUN_EnterStandby 032B                         ??_main 0077  
+          __size_of_KEY_Driver 0059            __size_of_FUN_Driver 009D         MCU_SleepConfig@isSleep 0075  
+                       ?_GetAd 0075                  _gbKeyDouClick 0389                   ?_MOTO_Driver 0072  
+                       _ADCON0 001F                         _ADCON1 009F                         _ADRESH 001E  
+                       _ADRESL 009E         __end_of_CUP_CHR_Driver 0246                         _CMCON0 0019  
+                       i1l4582 02AE                         i1l7430 0000                         i1l7440 02A2  
+                       i1l7450 0000                         i1l7434 0000                         i1l7452 0000  
+                       i1l7454 0000                         i1l7446 0000                         i1l7438 0000  
+                       i1l7456 0000                         i1l7448 0000                         _INTCON 000B  
+                 ??_ADC_Driver 0077                      ??_DelayUs 0074                         _OSCCON 008F  
+                       _TMR2IE 0461                         _TMR2IF 0061                         _OPTION 0081  
+                       _TMR2ON 0092                         _bkeyUp 0385                         clrloop 030D  
+           __end_of_ADC_Driver 0216                      ?_ADC_Deal 0072                      ?_ADC_Init 0072  
+                       saved_w 007E           __size_of_LED_Display 0054                ?_CUP_CHR_Driver 0072  
+                    ?_CLK_Init 0072           __size_of_LED_SetMode 003B                      ?_MCU_Init 0072  
+                    ?_FUN_Init 0072                  __end_of_GetAd 0271                     _gbCupEvent 0387  
+               __pcstackCOMMON 0072                     _gbKeyClick 0388                      ?_TIM_Init 0072  
+            ??_MCU_SleepConfig 0075                     ??_ADC_Deal 0074                        ??_GetAd 0077  
+                   ??_ADC_Init 0074                     __pbssBANK0 0020                     ??_CLK_Init 0074  
+                 ??_KEY_Driver 0074          _gFun_workTimeCntFor1s 003C                   ??_FUN_Driver 0076  
+                   ??_MCU_Init 0074                     ??_FUN_Init 0074                     __pmaintext 02D0  
+                   __pintentry 0004                     ??_TIM_Init 0074             __end_of_KEY_Driver 0101  
+                      GetAd@ch 003E             __end_of_FUN_Driver 00A8                        _GO_DONE 00F9  
+                      _MSCKCON 001B                        _PSTRCON 019D                        _STRSYNC 0CEC  
+         __size_of_MOTO_Driver 0001                        _DelayUs 0314              ?_FUN_EnterStandby 0072  
+                      _bkeyDou 0383             ??_FUN_EnterStandby 0074                   __size_of_ISR 001F  
+         end_of_initialization 0300  CUP_CHR_Driver@cupchrStateCode 0075               ??_CUP_CHR_Driver 0075  
+      __size_of_MCU_EnterSleep 000C              __size_of_ADC_Deal 0053              __size_of_ADC_Init 000A  
+                 GetAd@tBuffer 003F              __size_of_CLK_Init 0014                _MCU_SleepConfig 0271  
+              GetAd@ADCON0Buff 0041              __size_of_MCU_Init 0003              __size_of_FUN_Init 0004  
+            __size_of_TIM_Init 000E               _gFun_batVolState 0032                  ??_LED_Display 0074  
+          start_initialization 02F8                    __end_of_ISR 02B5                  ??_LED_SetMode 0074  
+                    _bTime10ms 0380                    __pbssCOMMON 0077                  __pcstackBANK0 003E  
+                    _gbLedWait 038D            __end_of_LED_Display 0155        __end_of_MCU_SleepConfig 0296  
+                     ?_DelayUs 0072            __end_of_LED_SetMode 01E3                      __pnvBANK0 0044  
+                    __ptext600 0000                      __ptext601 000B                      __ptext610 02DE  
+                    __ptext602 01E3                      __ptext611 02B5                      __ptext603 02EC  
+                    __ptext620 0296                      __ptext612 0338                      __ptext604 0271  
+                    __ptext621 0000                      __ptext613 032B                      __ptext605 0246  
+                    __ptext614 0324                      __ptext606 0216                      __ptext615 0101  
+                    __ptext607 0335                      __ptext616 01A8                      __ptext608 0314  
+                    __ptext617 0331                      __ptext609 0302                      __ptext618 0155  
+                    __ptext619 00A8                      __pswtext1 031C                 _MCU_EnterSleep 02EC  
+                     _ADC_Deal 0155                       _ADC_Init 0302                 __size_of_GetAd 002B  
+              _gTimeCntFor10ms 003D                  ??_MOTO_Driver 0074      __size_of_FUN_EnterStandby 0007  
+                     _CLK_Init 02B5                _gFun_adcChIndex 002F              interrupt_function 0004  
+                     _MCU_Init 0335                       _FUN_Init 0331                       _TIM_Init 02DE  
+       __end_of_MCU_EnterSleep 02F8                    _LED_Display 0101                LED_SetMode@mode 0074  
+                  _LED_SetMode 01A8                     _ADC_Driver 01E3               ?_MCU_SleepConfig 0072  
+             __size_of_DelayUs 0008            __end_of_MOTO_Driver 0339                    DelayUs@time 0074  
+                     _gIsCupOk 0386                       _bakPORTA 002E                       _gbLed1hz 038A  
+                     _gbLed2hz 038B                       _gbLedEnd 038C                ?_MCU_EnterSleep 0072  
+            _FUN_EnterWorkMode 032B                _gFun_ledCnt_1hz 0037                _gFun_ledCnt_2hz 0038  
+           ?_FUN_EnterWorkMode 0072                       _bkeyCode 0382                       _bkeyBuff 0381  
+                     _bkeyTemp 0384                _gFun_ledTimeCnt 002A            ??_FUN_EnterWorkMode 0074  
+              _gFun_ledStopCnt 0028                  __size_of_main 000E                 _gFun_adCurrent 0022  
+                     clear_ram 030C                _gFun_keyIdleCnt 0044                 _gFun_adcBuffer 0024  
+              _gFun_keyTimeCnt 0036      __end_of_FUN_EnterWorkMode 0331              _gFun_adcDealDelay 0030  
+              _gFun_ocpTimeCnt 003A                  GetAd@ADC_DATA 0042               _FUN_EnterStandby 0324  
+                  _MOTO_Driver 0338                       intlevel1 0000                    ?_ADC_Driver 0072  
+      __size_of_CUP_CHR_Driver 0030                     _KEY_Driver 00A8              _gFun_adcBufferSum 0026  
+                   _FUN_Driver 000B                  _gFun_adBatVol 0020                  _gFun_adcIndex 0031  
+              _gFun_ucpTimeCnt 003B                  _gFun_chrState 0033            _gFun_cupchrCodeBuff 0034  
+                 _gFun_ledMode 0039             _gFun_cupchrTimeCnt 0035  
